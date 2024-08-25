@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: chapter2
+  datasource:
+    url: jdbc:mysql://${DATABASE_URL}/chapter2
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
