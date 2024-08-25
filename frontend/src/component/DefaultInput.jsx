@@ -9,14 +9,14 @@ const DefaultInputStyle = styled.input`
         outline: none;
     }
 
-    width: 80vw;
+    width: 80%;
     height: 35px;
 `;
 
 const DefaultInput = (props) => {
     return (
         <DefaultInputStyle placeholder={props.placeholder}>
-
+            
         </DefaultInputStyle>
     )
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const DefaultButtonStyle = styled.button`
-    width: 80vw;
+    width: 80%;
     height: 45px;
     background-color: ${(props) => props.color? props.color: "rgb(4, 4, 4)"};
     border-radius: 5px;
@@ -10,6 +10,7 @@ const DefaultButtonStyle = styled.button`
   
 const InnerButtonText = styled.span`
     font-family: 'Pretendard-Regular';
+    color: white;
 `
 
 const DefualtButton = (props) => {
