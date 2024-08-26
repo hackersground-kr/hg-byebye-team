@@ -87,15 +87,18 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 ### window
 clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
 ![Group 10](https://github.com/user-attachments/assets/701d8cef-f740-4ec4-a700-e35d888828d7)
-설치 프로그램을 다운 받아 실행 -> Next를 연달아 5번 클릭 -> Git from the command line~ 클릭 -> Next를 6번 클릭을 하여 깃 설치를 마무리합니다.
+설치 프로그램을 다운 받아 실행 -> Next를 연달아 6번 클릭 -> Git from the command line~ 클릭 -> Next를 8번 클릭 -> install 합니다.
 
 ### MAC
 1. 아래 명령어를 터미널에 입력하여 Homebrew 설치를 시작합니다. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ![image](https://github.com/user-attachments/assets/2d855021-ccd2-4831-a064-28bc33521a6a)
 2. password 문구가 나오면 mac 비밀번호를 입력하고 설치를 완료합니다.
 3. 아래 명령어를 입력하여 Git 설치를 시작합니다.
+
+---
+
 >brew install git
-4. 설치가 완료되면 아래 명령어를 입력하여 정상적으로 설치되었는지 확인합니다.
+4. 설치가 완료되면 아래 명령어를 터미널에 입력하여 정상적으로 설치되었는지 확인합니다.
 >git --version
 5. 정상적으로 설치 되었다면 터미널을 종료합니다.
 
