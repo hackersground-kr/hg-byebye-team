@@ -79,7 +79,7 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 >
 ### window
 clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
-![git.png](images/git.png)
+![Group 10](https://github.com/user-attachments/assets/701d8cef-f740-4ec4-a700-e35d888828d7)
 설치 프로그램을 다운 받아 실행 -> Next를 연달아 5번 클릭 -> Git from the command line~ 클릭 -> Next를 6번 클릭을 하여 깃 설치를 마무리합니다.
 
 ### MAC
