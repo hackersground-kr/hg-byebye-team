@@ -49,9 +49,14 @@ Docker 또한 맞는 환경에 따라 클릭하여 다운받아주세요.
 >https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
 >![git.png](images/git.png)
 > 
->https://goddaehee.tistory.com/216 를 참고하여 깃 설치를 마무리합니다. window
+>Nextx5 -> Git from the command line~ 클릭 -> Nextx6 을 하여 깃허브 설치를 마무리합니다. window
 > 
->https://velog.io/@wijoonwu/Mac-OS-%EC%97%90%EC%84%9C-Git-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0 mac
+>1. 아래 명령어를 터미널에 입력하여 Homebrew 설치를 시작합니다.
+>   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+>2. password 문구가 나오면 mac 비밀번호를 입력하고 설치를 완료합니다.
+>3. 이 명령어를 입력하여 Git 설치를 시작합니다. brew install git
+>4. 설치가 완료되면 git --version을 입력하여 정상적으로 설치되었는지 확인합니다.
+>5. 정상적으로 설치 되었다면 터미널을 종료합니다. mac
 
 터미널(또는 명령 프롬프트)을 열고, 프로젝트를 저장할 폴더로 이동합니다. 예를 들어, 바탕화면에 클론하고 싶다면 다음과 같이 입력합니다
 > cd ~/Desktop  <- Mac
