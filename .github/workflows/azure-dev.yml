@@ -20,6 +20,9 @@ jobs:
       AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
       AZURE_LOCATION: ${{ vars.AZURE_LOCATION }}
       AZURE_ENV_NAME: ${{ vars.AZURE_ENV_NAME }}
+      DATABASE_URL: ${{ secrets.DB_URL }}
+      DATABASE_USER: ${{ secrets.DB_USERNAME }}
+      DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
     steps:
       - name: Checkout
@@ -35,10 +38,6 @@ jobs:
         uses: microsoft/variable-substitution@v1
         with:
           files: src/main/resources/application.yaml
-        env:
-          spring.datasource.url: ${{ secrets.DB_URL }}
-          spring.datasource.username: ${{ secrets.DB_USERNAME }}
-          spring.datasource.password: ${{ secrets.DB_PASSWORD }}
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
