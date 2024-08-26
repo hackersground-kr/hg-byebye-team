@@ -139,16 +139,31 @@ SDK -> Add SDK -> Download JDK로 들어갑니다.
 그리고 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 차례대로 입력해주세요.
 <br>
 git checkout backend
-<br>
-chmod +x gradlew <-- 윈도우에서는 해당하지 않습니다.
-<br>
-./gradlew build -x test
-<br>
 ![image](https://github.com/user-attachments/assets/53749e3d-7795-4565-8c1d-d60c1f189003)
 
 Docker Desktop을 실행시킵니다.
 
-mac의 터미널에서 해당 명령어를 입력합니다.
+https://github.com/ 해당 링크를 통해 깃허브에 접속한 뒤에 로그인 합니다.
+
+Profile 오른쪽의 프로필 사진을 클릭하여 프로필 메뉴에 접근합니다.
+![image](https://github.com/user-attachments/assets/c7aed06c-de47-4ae1-89af-06590ffd23f5)
+Your Repositories를 클릭하여 본인의 리포지토리 목록을 확인합니다.
+![image](https://github.com/user-attachments/assets/ad7e142c-517b-436a-8625-adeb65b3476d)
+오른쪽 상단의 초록색 new 버튼을 클릭하여 리포지토리를 생성합니다.
+![image](https://github.com/user-attachments/assets/113263eb-0181-4b44-bbc1-1426351ff9c6)
+이름을 chapter-two로 설정합니다.
+![image](https://github.com/user-attachments/assets/4916bfe0-9e72-414b-b0f5-4d13648fa3bc)
+이후 쭉 내려가서 Create Repository를 클릭하여 리포지토리를 생성합니다.
+![image](https://github.com/user-attachments/assets/31d2df39-d0c9-4ae0-b445-ec525ec76e34)
+InteliJ로 돌아와 터미널에서 다음 명령어를 순서대로 입력합니다.
+![image](https://github.com/user-attachments/assets/62fbb00b-7ef0-466f-8635-fca58c51fb23)
+
+이후 터미널에 보이는 url을 클릭하여 다시 깃허브로 이동하여 commit & push가 제대로 진행 된 것을 확인합니다.
+<img width="500" alt="Screenshot 2024-08-27 at 12 01 31 AM" src="https://github.com/user-attachments/assets/4aa8ccba-e405-4ff2-837d-d6d1c0d713e9">
+이런식으로 떠있다면 성공이다.
+
+InteliJ의 터미널에서 해당 명령어를 입력합니다.
+MAC의 경우
 >brew install azd
 >
 window의 경우
@@ -162,31 +177,16 @@ window의 경우
 이후, 해당 명령어를 입력합니다.
 
 ```
-cd
-cd Desktop/hg-byebye-team
 azd init -e byebye-team
 ```
+
 이후 **SUCCESS**라는 문구가 보이면 넘어갑니다.
 
 **Use code in the current directory** 를 키보드 위 아래 방향키로 선택한 후 엔터를 입력합니다.
 > 
 >마찬가지로 **Confirm and continue initializing my app**을 같은 방법으로 선택해줍니다.
 > 
-SUCCESS: Your app is ready for the cloud! 문구를 확인하면 성공하셨습니다! 
-
-인텔리제이 왼쪽의 디렉토리 중 루트 디렉토리 하위에 존재하는 azure.yaml 파일을 선택합니다.
-
-```
-name: HackerGround
-metadata:
-template: azd-init@1.9.5
-services:
-HackerGround:
-project: .
-host: containerapp
-language: java 
-```
-를 복사하여 붙여넣습니다.
+SUCCESS: Your app is ready for the cloud! 문구를 확인하면 성공하셨습니다!
 
 이후 인텔리제이 터미널에 azd up 명령어를 입력합니다.
 
@@ -206,138 +206,12 @@ SUCCESS: Your up workflow to provision and deploy to Azure completed in 2 minute
 
 다음으로는 깃허브의 Git Actions를 이용한 CI/CD 구축을 진행하겠습니다.
 
-https://github.com/ 해당 링크를 통해 깃허브에 접속한 뒤에 로그인 합니다.
-
-Profile 오른쪽의 프로필 사진을 클릭하여 프로필 메뉴에 접근합니다.
-![image](https://github.com/user-attachments/assets/c7aed06c-de47-4ae1-89af-06590ffd23f5)
-Your Repositories를 클릭하여 본인의 리포지토리 목록을 확인합니다.
-![image](https://github.com/user-attachments/assets/ad7e142c-517b-436a-8625-adeb65b3476d)
-오른쪽 상단의 초록색 new 버튼을 클릭하여 리포지토리를 생성합니다.
-![image](https://github.com/user-attachments/assets/113263eb-0181-4b44-bbc1-1426351ff9c6)
-이름을 chapter-two로 설정합니다.
-![image](https://github.com/user-attachments/assets/4916bfe0-9e72-414b-b0f5-4d13648fa3bc)
-이후 쭉 내려가서 Create Repository를 클릭하여 리포지토리를 생성합니다.
-![image](https://github.com/user-attachments/assets/31d2df39-d0c9-4ae0-b445-ec525ec76e34)
-InteliJ로 돌아와 터미널에서 다음 명령어를 순서대로 입력합니다.
-![image](https://github.com/user-attachments/assets/62fbb00b-7ef0-466f-8635-fca58c51fb23)
-
-
-
-이후 터미널에 보이는 url을 클릭하여 다시 깃허브로 이동하여 commit & push가 제대로 진행 된 것을 확인합니다.
-<img width="500" alt="Screenshot 2024-08-27 at 12 01 31 AM" src="https://github.com/user-attachments/assets/4aa8ccba-e405-4ff2-837d-d6d1c0d713e9">
-이런식으로 떠있다면 성공이다.
-
-다시 InteliJ의 터미널에 접속하여 
-```
-mkdir -p .github/workflows
-```
-를 입력합니다.
-
+inteliJ의 터미널에서
 > azd pipeline config
 > 
 를 입력하여 파이프라인 구축을 진행합니다.
 
 설정 마지막에 Would you like to commit and push your local changes to start the configured CI pipeline? 라는 질문이 나오면 n를 선택하고 종료합니다.
-
-```
-curl \
-https://raw.githubusercontent.com/Azure-Samples/azd-starter-bicep/main/.github/workflows/azure-dev.yml \
---output Users/{사용자 폴더명}/Desktop/hg-byebye-team/.github/workflows/azure-dev.yml
-```
-를 입력하여 워크플로우 파일을 생성합니다.
-
-/.github 디렉토리 안에 위치한 workflows 디렉토리에 들어가서 azure-dev.yml 파일을 들어갑니다.
-```
-name: Deploy to Azure Container Apps
-
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-
-permissions:
-  id-token: write
-  contents: read
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      AZURE_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
-      AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
-      AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
-      AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
-      AZURE_LOCATION: ${{ vars.AZURE_LOCATION }}
-      AZURE_ENV_NAME: ${{ vars.AZURE_ENV_NAME }}
-      DATABASE_URL: ${{ secrets.DB_URL }}
-      DATABASE_USER: ${{ secrets.DB_USERNAME }}
-      DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: yaml file setting
-        run: |
-          echo "${{ secrets.APPLICATION_YAML }}" > ./src/main/resources/application.yaml
-
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
-
-      - name: Build with Gradle
-        run: ./gradlew build
-
-      - name: Docker build
-        run: |
-          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on .
-          docker push ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on:latest
-
-      - name: Install azd
-        uses: Azure/setup-azd@v1.0.0
-
-      - name: Log in with Azure (Federated Credentials)
-        if: ${{ env.AZURE_CLIENT_ID != '' }}
-        run: |
-          azd auth login `
-            --client-id "$Env:AZURE_CLIENT_ID" `
-            --federated-credential-provider "github" `
-            --tenant-id "$Env:AZURE_TENANT_ID"
-        shell: pwsh
-
-      - name: Log in with Azure (Client Credentials)
-        if: ${{ env.AZURE_CREDENTIALS != '' }}
-        run: |
-          $info = $Env:AZURE_CREDENTIALS | ConvertFrom-Json -AsHashtable
-          Write-Host "::add-mask::$($info.clientSecret)"
-          
-          azd auth login \
-            --client-id "$($info.clientId)" \
-            --client-secret "$($info.clientSecret)" \
-            --tenant-id "$($info.tenantId)"
-        shell: pwsh
-        env:
-          AZURE_CREDENTIALS: ${{ env.AZURE_CREDENTIALS }}
-
-      - name: Provision Infrastructure
-        run: |
-          azd provision --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
-        env:
-          AZD_INITIAL_ENVIRONMENT_CONFIG: ${{ secrets.AZD_INITIAL_ENVIRONMENT_CONFIG }}
-
-      - name: Deploy Application
-        run: |
-          azd deploy --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
-```
-
-를 복사하여 붙여넣습니다.
 
 다시 깃허브로 복귀하여 리포지토리 화면에 도착합니다.
 
@@ -358,6 +232,13 @@ git commit -m "Add GitHub Actions workflow for Azure deployment"
 git push origin main
 ```
 를 입력하여 커밋을 진행합니다. GitHub 리포지토리의 Actions 탭에서 Azure Dev 워크플로우가 돌아가는 것을 확인합니다.
+
+만약 Everything up-to-date 라는 명령어가 나타났다면,
+깃허브의 Repository로 복귀하여 리포지토리 이름 밑의 Actions를 클릭하여 Deploy to Azure Container App을 클릭합니다.
+
+이후 88 workflow runs라고 적혀있는 배포 목록에서 가장 위에 있는 목록을 클릭합니다.
+
+오른쪽 위에 있는 Rerun All job을 클릭하여 배포를 재실행합니다.
 
 GitHub Actions 워크플로우가 성공적으로 끝나면 로그 화면에서 "여기"와 같은 링크를 볼 수 있습니다. 이를 클릭해서 정상적으로 작동하는지 확인합니다.
 ![Group 9](https://github.com/user-attachments/assets/1295d350-bc85-4d24-9f91-246e01c9a3b2)
