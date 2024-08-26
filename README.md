@@ -79,6 +79,16 @@ window의 경우
 설치 후 
 >azd login
 >
-을 입력하여 
+을 입력하여 microsoft 계정을 이용해 로그인을 진행합니다. 로그인이 성공하면 로그인 페이지를 닫고 터미널로 돌아옵니다. 실패 시 계속 시도합니다.
 
+이후, 해당 명령어를 입력합니다.
+>cd
+cd Desktop/hg-common-hackergroud
+azd init -e common-hackergroud
+> 
+이후 SUCCESS라는 문구가 보이면 넘어갑니다.
+
+>Use code in the current directory 를 마우스 위 아래 방향키로 선택한 후 엔터를 입력합니다.
+> 
+sdasdas
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
