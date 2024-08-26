@@ -88,6 +88,8 @@ SDK -> Add SDK -> Download JDK로 들어갑니다.
 다운로드가 완료되었다면 Apply 후 OK를 클릭합니다.
 ![image](https://github.com/user-attachments/assets/b204ada8-6b1b-459b-ba74-bad2a53af489)
 
+인텔리제이를 재실행해 주세요. JDK가 정상적으로 설치 된 것을 확인하실 수 있습니다.
+
 그리고 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 입력해주세요.
 ./gradlew build -x test
 ![image](https://github.com/user-attachments/assets/53749e3d-7795-4565-8c1d-d60c1f189003)
