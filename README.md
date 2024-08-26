@@ -79,6 +79,18 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 이후 설치 파일을 실행하여 똑같이 진행하면 설치가 완료됩니다.
 *1회 실행 해야 합니다*
 
+**JDK 17 다운로드**
+https://www.oracle.com/java/technologies/downloads/#java11
+<br>
+위 사이트에서 jdk 17을 다운로드 할 수 있습니다.
+
+윈도우는 exe파일을 다운로드 받고,
+<img width="1137" alt="Screenshot 2024-08-27 at 7 23 09 AM" src="https://github.com/user-attachments/assets/03952844-b0ea-4e00-8167-3664b9fc2d79">
+<br>
+맥은 dmg파일을 다운로드 받으면 됩니다.
+<img width="1161" alt="Screenshot 2024-08-27 at 7 23 04 AM" src="https://github.com/user-attachments/assets/533d44b5-66b1-4ac3-802b-dfaf0bb57ffe">
+<br>
+
 ## 시작하기
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
 
