@@ -14,7 +14,7 @@ export default function MainPage() {
       <Header></Header>
       <main className="flex flex-col items-center p-4">
         <img
-          src="/placeholder.svg"
+          src="/banner.jpeg"
           alt="Main Banner"
           className="my-8 w-full max-w-4xl"
           width="800"

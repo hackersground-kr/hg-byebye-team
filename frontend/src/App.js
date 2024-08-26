@@ -9,6 +9,7 @@ import JoinPage from "./page/JoinPage";
 import CompanyPage from "./page/CompanyPage";
 import EducationPage from "./page/EducationPage";
 import Meeting from "./page/Meeting";
+// import MobileCompanyInfo from "./page/MobileCompanyInfo"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/company" element={<CompanyPage/>}/>
         <Route path="/education" element={<EducationPage/>}/>
         <Route path="/meet" element={<Meeting/>}/>
+        {/*<Route path="/mobile/company/info" element={<MobileCompanyInfo/>}/>*/}
       </Routes>
       
     </Background>
