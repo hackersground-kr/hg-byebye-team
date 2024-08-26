@@ -39,7 +39,7 @@ window에서의 InteliJ
 ![intelij_Window.png](images/intelij_Window.png)
 Mac
 ![intelij_Mac.png](images/intelij_Mac.png)
-Docker 또한 맞는 환경에 따라 클릭하여 다운받아주세요.
+Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아주세요.
 ![docker.png](images/docker.png)
 ## 시작하기
 
@@ -65,16 +65,32 @@ Docker 또한 맞는 환경에 따라 클릭하여 다운받아주세요.
 
 리포지토리를 클론합니다.
 > git clone https://github.com/hackersground-kr/hg-byebye-team.git
-> 
-```
 IntelliJ IDEA를 실행합니다.
-•	처음 시작 시, “Open” 또는 “Import Project”를 선택합니다.
-•	클론한 프로젝트 폴더를 선택하고 “OK”를 클릭합니다.
-•	IntelliJ가 프로젝트 설정을 자동으로 인식하고 설정을 완료합니다.
-경고창이 나타날 시, Trust Project를 선택합니다.
-왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 입력해주세요.
+![image](https://github.com/user-attachments/assets/3b38ca0f-73de-452e-ad72-e045947502e7)
+
+처음 시작 시, “Open” 또는 “Import Project”를 선택합니다.
+![image](https://github.com/user-attachments/assets/eb2959ad-e671-4ebe-a73c-f2d6715099e6)
+
+클론한 프로젝트 폴더를 선택하고 “OK”를 클릭합니다. **경고창이 나타날 시, Trust Project를 선택합니다.**
+![image](https://github.com/user-attachments/assets/9cc24336-26eb-48c5-b28e-4c42622bb2cf)
+
+IntelliJ가 프로젝트 설정을 자동으로 인식하고 설정을 완료합니다.
+   
+프로젝트가 실행되면 File -> Project Structure를 클릭하여 들어갑니다.
+![image](https://github.com/user-attachments/assets/f9d640fc-3177-473c-8767-7f211c255dc0)
+
+SDK -> Add SDK -> Download JDK로 들어갑니다.
+<img width="1470" alt="Screenshot 2024-08-26 at 9 24 19 PM" src="https://github.com/user-attachments/assets/95ff6734-47ac-4605-abc1-ce4001b9df63">
+
+다음과 같이 선택하고 다운로드를 클릭합니다.
+![image](https://github.com/user-attachments/assets/9d60a3ed-c9f0-4228-8bed-98ffb9c24b36)
+
+다운로드가 완료되었다면 Apply 후 OK를 클릭합니다.
+![image](https://github.com/user-attachments/assets/b204ada8-6b1b-459b-ba74-bad2a53af489)
+
+그리고 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 입력해주세요.
 ./gradlew build -x test
-```
+![image](https://github.com/user-attachments/assets/53749e3d-7795-4565-8c1d-d60c1f189003)
 
 Docker Desktop을 실행시킵니다.
 
