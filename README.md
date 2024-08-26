@@ -39,7 +39,7 @@ Docker window : https://docs.docker.com/desktop/install/windows-install/
 <br>
 Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 <br>
-해당 링크에 접속하여 InteliJ와 DockerDesktop을 설치해주세요. 사양은 본인의 환경에 맞게 설정합니다.
+해당 링크에 접속하여 InteliJ와 DockerDesktop을 설치해주세요.
 
 **InteliJ**
 ![intelij_Window.png](images/intelij_Window.png)
@@ -54,13 +54,21 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 ![image](https://github.com/user-attachments/assets/08a0dfca-8a40-4b20-9ebf-f843be83fca5)
 ![image](https://github.com/user-attachments/assets/c99d9659-a11a-4cf0-957d-7f2b5e1c8329)
 
-이 후, Next를 연달아 클릭하면 설치가 완료됩니다.
+윈도우의 경우는 64bit launcher와 Update PATH~ 를 선택합니다.
+![image](https://github.com/user-attachments/assets/df5fd94c-efa6-4caa-a3e1-7189407e15c8)
+
+그 후 계속 next룰 누르면 설치가 완료됩니다.
 
 ---
 
 Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아주세요.
 <br>
-*계정이 없으시다면 회원가입해주세요!!*
+계정이 없다면 회원가입을 해야 하는데, 회원가입을 하는 방법은
+<br>
+https://www.docker.com/products/docker-hub/
+<br>
+도커허브 공식사이트에 들어가서, Create Hub Account를 클릭하고, 본인이 쓸 계정의 정보들을 입력해주면 됩니다.
+![image](https://github.com/user-attachments/assets/dd74c055-40da-44aa-996f-db275f5b6693)
 
 Docker window : https://docs.docker.com/desktop/install/windows-install/
 <br>
@@ -80,7 +88,7 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 *1회 실행 해야 합니다*
 
 **JDK 17 다운로드**
-https://www.oracle.com/java/technologies/downloads/#java11
+[https://www.oracle.com/java/technologies/downloads/#java11](https://oracle.com/java/technologies/downloads/#jdk17-windows)
 <br>
 위 사이트에서 jdk 17을 다운로드 할 수 있습니다.
 
@@ -119,7 +127,7 @@ clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치�
 터미널(또는 명령 프롬프트)을 열고, 프로젝트를 저장할 폴더로 이동합니다. 예를 들어, 바탕화면에 클론하고 싶다면 다음과 같이 입력합니다
 > cd ~/Desktop  <- Mac
 
-> cd %USERPROFILE%\Desktop  <- Windows
+> cd %{유저 폴더명}%\Desktop  <- Windows
 
 리포지토리를 클론합니다.
 > git clone https://github.com/hackersground-kr/hg-byebye-team.git
@@ -238,6 +246,10 @@ APPLICATION_YAML    {YAML파일 전체}
 DOCKER_PASSWORD     {도커 password}
 DOCKER_USERNAME     {도커 이름}
 ```
+<br>
+모두 수행하면 이렇게 됩니다.
+![image](https://github.com/user-attachments/assets/e47f0711-4daf-4dd9-84c6-ecfc75d5e109)
+<br>
 위와 같이 입력하신 후, InteliJ로 돌아와 터미널에
 ```
 git add .
