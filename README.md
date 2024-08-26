@@ -49,7 +49,7 @@ Docker 또한 맞는 환경에 따라 클릭하여 다운받아주세요.
 >https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
 >![git.png](images/git.png)
 > 
->Nextx5 -> Git from the command line~ 클릭 -> Nextx6 을 하여 깃허브 설치를 마무리합니다. window
+>Next x5 -> Git from the command line~ 클릭 -> Next x6 을 하여 깃허브 설치를 마무리합니다. window
 > 
 >1. 아래 명령어를 터미널에 입력하여 Homebrew 설치를 시작합니다.
 >   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
