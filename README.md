@@ -197,7 +197,7 @@ git commit -m "First commit"
 ```
 
 https://github.com/ 해당 링크를 통해 깃허브에 접속한 뒤에 로그인 합니다.
-<img width="412" alt="Screenshot 2024-08-26 at 11 48 19 PM" src="https://github.com/user-attachments/assets/07c8b8c1-87b1-446c-81d2-bcf2c71bbd65">
+
 Profile 오른쪽의 프로필 사진을 클릭하여 프로필 메뉴에 접근합니다.
 ![image](https://github.com/user-attachments/assets/c7aed06c-de47-4ae1-89af-06590ffd23f5)
 Your Repositories를 클릭하여 본인의 리포지토리 목록을 확인합니다.
@@ -214,7 +214,7 @@ InteliJ로 돌아와 터미널에서 다음 명령어를 순서대로 입력합�
 ![image](https://github.com/user-attachments/assets/8bf31b6a-01d1-4adf-a33e-bee78433d347)
 
 이후 터미널에 보이는 url을 클릭하여 다시 깃허브로 이동하여 commit & push가 제대로 진행 된 것을 확인합니다.
-<img width="896" alt="Screenshot 2024-08-27 at 12 01 31 AM" src="https://github.com/user-attachments/assets/4aa8ccba-e405-4ff2-837d-d6d1c0d713e9">
+<img width="500" alt="Screenshot 2024-08-27 at 12 01 31 AM" src="https://github.com/user-attachments/assets/4aa8ccba-e405-4ff2-837d-d6d1c0d713e9">
 이런식으로 떠있다면 성공이다.
 
 다시 InteliJ의 터미널에 접속하여 
