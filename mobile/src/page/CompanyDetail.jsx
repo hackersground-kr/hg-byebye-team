@@ -64,12 +64,12 @@ const CompanyDetail = () => {
         <Container>
             <Header>Chapter2에서 태어난 기업</Header>
             <Card>
-                <Logo src="{네이버 로고 이미지}" alt="Company Logo"/>
+                <Logo src="naver.png" alt="Company Logo"/>
                 <TextContainer>
                     <CompanyName>네이버</CompanyName>
                     <CompanyDescription>말이 필요없는 개쩌는 기업 ㄷ</CompanyDescription>
                 </TextContainer>
-                <ArrowIcon src="{화살표 이미지}" alt="Arrow"/>
+                <ArrowIcon src="arrow.png" alt="Arrow"/>
             </Card>
         </Container>
     );

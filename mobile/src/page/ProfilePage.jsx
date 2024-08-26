@@ -131,37 +131,37 @@ const ProfilePage = () => {
         <Container>
             <Title>프로필</Title>
             <ProfileContainer>
-                <ProfileImage src="/path/to/logo.png" alt="Profile" />
+                <ProfileImage src="profile.png" alt="Profile" />
                 <ProfileInfo>
-                    <UserName>{'{사용자 이름}'}</UserName>
-                    <UserPhone>010-1234-1234</UserPhone>
+                    <UserName>{'서승훈'}</UserName>
+                    <UserPhone>010-2239-7951</UserPhone>
                 </ProfileInfo>
             </ProfileContainer>
             <SectionTitle>나의 창업</SectionTitle>
             <Card>
-                <CardImage src="/path/to/naver.png" alt="Naver" />
+                <CardImage src="naver.png" alt="Naver" />
                 <CardContent>
                     <CardTitle>네이버</CardTitle>
                     <CardDescription>말이 필요없는 개쩌는 기업 ㄷ</CardDescription>
                 </CardContent>
                 <Separator />
-                <ArrowIcon src="/path/to/arrow.png" alt="Arrow" />
+                <ArrowIcon src="arrow.png" alt="Arrow" />
             </Card>
             <SettingsSection>
                 <SettingsItem>
                     <SettingsText>개인정보처리방침</SettingsText>
                     <Separator />
-                    <ArrowIcon src="/path/to/arrow.png" alt="Arrow" />
+                    <ArrowIcon src="arrow.png" alt="Arrow" />
                 </SettingsItem>
                 <SettingsItem marginTop="20px">
                     <SettingsText color="#FF0000">로그아웃</SettingsText>
                     <Separator />
-                    <ArrowIcon src="/path/to/arrow.png" alt="Arrow" />
+                    <ArrowIcon src="arrow.png" alt="Arrow" />
                 </SettingsItem>
                 <SettingsItem marginTop="20px">
                     <SettingsText color="#FF0000">회원탈퇴</SettingsText>
                     <Separator />
-                    <ArrowIcon src="/path/to/arrow.png" alt="Arrow" />
+                    <ArrowIcon src="arrow.png" alt="Arrow" />
                 </SettingsItem>
             </SettingsSection>
         </Container>

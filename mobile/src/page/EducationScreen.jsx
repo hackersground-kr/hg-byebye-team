@@ -76,25 +76,25 @@ const EducationScreen = () => {
     return (
         <Container>
             <Title>Chapter2</Title>
-            <Image src="/path/to/promotion-image.png" alt="Promotional" />
+            <Image src="create.png" alt="Promotional" />
             <ContentContainer>
                 <CardSection>
                     <Card>
-                        <CardImage src="/path/to/img.png" alt="Basic Startups" />
+                        <CardImage src="tile.png" alt="Basic Startups" />
                         <CardTitle>창업의 기초</CardTitle>
                     </Card>
                     <Card>
-                        <CardImage src="/path/to/img.png" alt="Intermediate Startups" />
+                        <CardImage src="tile.png" alt="Intermediate Startups" />
                         <CardTitle>창업의 중급</CardTitle>
                     </Card>
                 </CardSection>
                 <CardSection>
                     <Card>
-                        <CardImage src="/path/to/img.png" alt="Advanced Startups" />
+                        <CardImage src="tile.png" alt="Advanced Startups" />
                         <CardTitle>창업의 심화</CardTitle>
                     </Card>
                     <Card>
-                        <CardImage src="/path/to/img.png" alt="Startup Examples" />
+                        <CardImage src="tile.png" alt="Startup Examples" />
                         <CardTitle>창업의 예시</CardTitle>
                     </Card>
                 </CardSection>
