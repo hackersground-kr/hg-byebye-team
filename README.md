@@ -31,11 +31,14 @@
 > 
 전체적으로는 InteliJ, Docker Desktop, Github 계정, Microsoft 계정 (권한이 있어야합니다.), 자바 jdk-17가 필요합니다.
 
-InteliJ window : [https://www.jetbrains.com/ko-kr/idea/download/](https://www.jetbrains.com/ko-kr/idea/download/?section=windows),
-InteliJ Mac : [https://docs.docker.com/desktop/install/mac-install/](https://www.jetbrains.com/ko-kr/idea/download/?section=mac),
-Docker window : https://docs.docker.com/desktop/install/windows-install/,
+InteliJ window : [https://www.jetbrains.com/ko-kr/idea/download/](https://www.jetbrains.com/ko-kr/idea/download/?section=windows)
+<br>
+InteliJ Mac : [https://docs.docker.com/desktop/install/mac-install/](https://www.jetbrains.com/ko-kr/idea/download/?section=mac)
+<br>
+Docker window : https://docs.docker.com/desktop/install/windows-install/
+<br>
 Docker Mac : https://docs.docker.com/desktop/install/mac-install/
-
+<br>
 해당 링크에 접속하여 InteliJ와 DockerDesktop을 설치해주세요. 사양은 본인의 환경에 맞게 설정합니다.
 
 **InteliJ**
@@ -56,8 +59,11 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 ---
 
 Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아주세요.
+<br>
+*계정이 없으시다면 회원가입해주세요!!*
 
-Docker window : https://docs.docker.com/desktop/install/windows-install/,
+Docker window : https://docs.docker.com/desktop/install/windows-install/
+<br>
 Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 ![docker.png](images/docker.png)
 
@@ -100,18 +106,19 @@ clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치�
 
 리포지토리를 클론합니다.
 > git clone https://github.com/hackersground-kr/hg-byebye-team.git
+> 
 IntelliJ IDEA를 실행합니다.
 ![image](https://github.com/user-attachments/assets/3b38ca0f-73de-452e-ad72-e045947502e7)
 
 처음 시작 시, “Open” 또는 “Import Project”를 선택합니다.
 ![image](https://github.com/user-attachments/assets/eb2959ad-e671-4ebe-a73c-f2d6715099e6)
 
-클론한 프로젝트 폴더를 선택하고 “OK”를 클릭합니다. **경고창이 나타날 시, Trust Project를 선택합니다.**
+클론한 프로젝트 폴더(Desktop/hg-byebye-team)를 선택하고 “OK”를 클릭합니다. **경고창이 나타날 시, Trust Project를 선택합니다.**
 ![image](https://github.com/user-attachments/assets/9cc24336-26eb-48c5-b28e-4c42622bb2cf)
 
 IntelliJ가 프로젝트 설정을 자동으로 인식하고 설정을 완료합니다.
    
-프로젝트가 실행되면 File -> Project Structure를 클릭하여 들어갑니다.
+프로젝트가 실행되면 File -> Project Structure를 클릭하여 들어갑니다. (윈도우도 동일합니다)
 ![image](https://github.com/user-attachments/assets/f9d640fc-3177-473c-8767-7f211c255dc0)
 
 SDK -> Add SDK -> Download JDK로 들어갑니다.
@@ -125,15 +132,20 @@ SDK -> Add SDK -> Download JDK로 들어갑니다.
 
 인텔리제이를 재실행해 주세요. JDK가 정상적으로 설치 된 것을 확인하실 수 있습니다.
 
-그리고 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 입력해주세요.
-chmod +x gradlew, 
+그리고 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 차례대로 입력해주세요.
+<br>
+git checkout backend
+<br>
+chmod +x gradlew
+<br>
 ./gradlew build -x test
+<br>
 ![image](https://github.com/user-attachments/assets/53749e3d-7795-4565-8c1d-d60c1f189003)
 
 Docker Desktop을 실행시킵니다.
 
 mac의 터미널에서 해당 명령어를 입력합니다.
->brew install azure/azure-cli/azd
+>brew install azd
 >
 window의 경우
 > winget install microsoft.azd
@@ -147,8 +159,8 @@ window의 경우
 
 ```
 cd
-cd Desktop/hg-byebye-hackergroud
-azd init -e byebye-hackergroud
+cd Desktop/hg-byebye-team
+azd init -e byebye-team
 ```
 이후 **SUCCESS**라는 문구가 보이면 넘어갑니다.
 
@@ -172,7 +184,7 @@ language: java
 ```
 를 복사하여 붙여넣습니다.
 
-이후 터미널에 azd up 명령어를 입력합니다.
+이후 인텔리제이 터미널에 azd up 명령어를 입력합니다.
 
 >Select an Azure Subscription to use 문구에서 Hackers Ground 리소스 그룹을 키보드 위 아래 방향키로 선택하세요. 선택후 엔터를 누르시면 됩니다.
 
@@ -190,14 +202,6 @@ SUCCESS: Your up workflow to provision and deploy to Azure completed in 2 minute
 
 다음으로는 깃허브의 Git Actions를 이용한 CI/CD 구축을 진행하겠습니다.
 
-터미널에서 다음 명령어를 입력합니다.
-
-```
-git init
-git add .
-git commit -m "First commit"
-```
-
 https://github.com/ 해당 링크를 통해 깃허브에 접속한 뒤에 로그인 합니다.
 
 Profile 오른쪽의 프로필 사진을 클릭하여 프로필 메뉴에 접근합니다.
@@ -210,10 +214,10 @@ Your Repositories를 클릭하여 본인의 리포지토리 목록을 확인합�
 ![image](https://github.com/user-attachments/assets/4916bfe0-9e72-414b-b0f5-4d13648fa3bc)
 이후 쭉 내려가서 Create Repository를 클릭하여 리포지토리를 생성합니다.
 ![image](https://github.com/user-attachments/assets/31d2df39-d0c9-4ae0-b445-ec525ec76e34)
-생성 후 보이는 화면에서 https://github.com/{깃허브ID}/chapter-two.git 을 복사합니다.
-![Group 7](https://github.com/user-attachments/assets/fc5e56a7-460d-4fb6-91cf-d5789e68b91f)
 InteliJ로 돌아와 터미널에서 다음 명령어를 순서대로 입력합니다.
-![image](https://github.com/user-attachments/assets/8bf31b6a-01d1-4adf-a33e-bee78433d347)
+![image](https://github.com/user-attachments/assets/62fbb00b-7ef0-466f-8635-fca58c51fb23)
+
+
 
 이후 터미널에 보이는 url을 클릭하여 다시 깃허브로 이동하여 commit & push가 제대로 진행 된 것을 확인합니다.
 <img width="500" alt="Screenshot 2024-08-27 at 12 01 31 AM" src="https://github.com/user-attachments/assets/4aa8ccba-e405-4ff2-837d-d6d1c0d713e9">
@@ -221,10 +225,7 @@ InteliJ로 돌아와 터미널에서 다음 명령어를 순서대로 입력합�
 
 다시 InteliJ의 터미널에 접속하여 
 ```
-REPOSITORY_ROOT=Desktop/hg-byebye-team
-cd $REPOSITORY_ROOT
 mkdir -p .github/workflows
-cd $REPOSITORY_ROOT
 ```
 를 입력합니다.
 
@@ -237,11 +238,11 @@ cd $REPOSITORY_ROOT
 ```
 curl \
 https://raw.githubusercontent.com/Azure-Samples/azd-starter-bicep/main/.github/workflows/azure-dev.yml \
---output $REPOSITORY_ROOT/.github/workflows/azure-dev.yml
+--output Users/{사용자 폴더명}/Desktop/hg-byebye-team/.github/workflows/azure-dev.yml
 ```
 를 입력하여 워크플로우 파일을 생성합니다.
 
-/github 디렉토리 안에 위치한 workflows 디렉토리에 들어가서 azure-dev.yml 파일을 들어갑니다.
+/.github 디렉토리 안에 위치한 workflows 디렉토리에 들어가서 azure-dev.yml 파일을 들어갑니다.
 ```
 name: Deploy to Azure Container Apps
 
@@ -269,67 +270,67 @@ DATABASE_URL: ${{ secrets.DB_URL }}
 DATABASE_USER: ${{ secrets.DB_USERNAME }}
 DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+steps:
+- name: Checkout
+  uses: actions/checkout@v3
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+- name: Set up JDK 17
+  uses: actions/setup-java@v3
+  with:
+    java-version: '17'
+    distribution: 'temurin'
 
-      - name: yaml file setting
-        run: |
-          echo "${{ secrets.APPLICATION_YAML }}" > ./src/main/resources/application.yaml
+- name: yaml file setting
+  run: |
+    echo "${{ secrets.APPLICATION_YAML }}" > ./src/main/resources/application.yaml
 
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+- name: Grant execute permission for gradlew
+  run: chmod +x gradlew
 
-      - name: Build with Gradle
-        run: ./gradlew build
+- name: Build with Gradle
+  run: ./gradlew build
 
-      - name: Docker build
-        run: |
-          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on .
-          docker push ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on:latest
+- name: Docker build
+  run: |
+    echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+    docker build -t ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on .
+    docker push ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on:latest
 
-      - name: Install azd
-        uses: Azure/setup-azd@v1.0.0
+- name: Install azd
+  uses: Azure/setup-azd@v1.0.0
 
-      - name: Log in with Azure (Federated Credentials)
-        if: ${{ env.AZURE_CLIENT_ID != '' }}
-        run: |
-          azd auth login `
-            --client-id "$Env:AZURE_CLIENT_ID" `
-            --federated-credential-provider "github" `
-            --tenant-id "$Env:AZURE_TENANT_ID"
-        shell: pwsh
+- name: Log in with Azure (Federated Credentials)
+  if: ${{ env.AZURE_CLIENT_ID != '' }}
+  run: |
+    azd auth login `
+      --client-id "$Env:AZURE_CLIENT_ID" `
+      --federated-credential-provider "github" `
+      --tenant-id "$Env:AZURE_TENANT_ID"
+  shell: pwsh
 
-      - name: Log in with Azure (Client Credentials)
-        if: ${{ env.AZURE_CREDENTIALS != '' }}
-        run: |
-          $info = $Env:AZURE_CREDENTIALS | ConvertFrom-Json -AsHashtable
-          Write-Host "::add-mask::$($info.clientSecret)"
-          
-          azd auth login \
-            --client-id "$($info.clientId)" \
-            --client-secret "$($info.clientSecret)" \
-            --tenant-id "$($info.tenantId)"
-        shell: pwsh
-        env:
-          AZURE_CREDENTIALS: ${{ env.AZURE_CREDENTIALS }}
+- name: Log in with Azure (Client Credentials)
+  if: ${{ env.AZURE_CREDENTIALS != '' }}
+  run: |
+    $info = $Env:AZURE_CREDENTIALS | ConvertFrom-Json -AsHashtable
+    Write-Host "::add-mask::$($info.clientSecret)"
+    
+    azd auth login \
+      --client-id "$($info.clientId)" \
+      --client-secret "$($info.clientSecret)" \
+      --tenant-id "$($info.tenantId)"
+  shell: pwsh
+  env:
+    AZURE_CREDENTIALS: ${{ env.AZURE_CREDENTIALS }}
 
-      - name: Provision Infrastructure
-        run: |
-          azd provision --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
-        env:
-          AZD_INITIAL_ENVIRONMENT_CONFIG: ${{ secrets.AZD_INITIAL_ENVIRONMENT_CONFIG }}
+- name: Provision Infrastructure
+  run: |
+    azd provision --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
+  env:
+    AZD_INITIAL_ENVIRONMENT_CONFIG: ${{ secrets.AZD_INITIAL_ENVIRONMENT_CONFIG }}
 
-      - name: Deploy Application
-        run: |
-          azd deploy --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
+- name: Deploy Application
+  run: |
+    azd deploy --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
 ```
 
 를 복사하여 붙여넣습니다.
@@ -342,18 +343,15 @@ DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
 오른쪽에 초록색 버튼의 New Repository Secret을 클릭한 뒤에, Name과 Secret 칸에 각각 해당 키워드를 입력해주세요.
 ```
 NAME                Secret
-DB_PASSWORD        설정한 DB 비밀번호
-DB_URL             DB URL
-DB_USERNAME        DB의 유저 이름 ex) root
-DB_PASSWORD        DB의 비밀번호
-DOCKER_USERNAME    도커 유저 ID
-DOCKER_PASSWORD    비밀번호
+APPLICATION_YAML    {YAML파일 전체}
+DOCKER_PASSWORD     {도커 password}
+DOCKER_USERNAME     {도커 이름}
 ```
 위와 같이 입력하신 후, InteliJ로 돌아와 터미널에
 ```
 git add .
 git commit -m "Add GitHub Actions workflow for Azure deployment"
-git push
+git push origin main
 ```
 를 입력하여 커밋을 진행합니다. GitHub 리포지토리의 Actions 탭에서 Azure Dev 워크플로우가 돌아가는 것을 확인합니다.
 
