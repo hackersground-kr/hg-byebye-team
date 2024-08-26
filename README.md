@@ -29,26 +29,40 @@
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
 > 
-InteliJ, Docker Desktop, Github 계정, Microsoft 계정 (권한이 있어야합니다.), 자바 jdk-17가 필요합니다.
-> https://www.jetbrains.com/ko-kr/idea/download/
-> https://docs.docker.com/desktop/install/mac-install/
-> 
+전체적으로는 InteliJ, Docker Desktop, Github 계정, Microsoft 계정 (권한이 있어야합니다.), 자바 jdk-17가 필요합니다.
+
+InteliJ window : [https://www.jetbrains.com/ko-kr/idea/download/](https://www.jetbrains.com/ko-kr/idea/download/?section=windows),
+InteliJ Mac : [https://docs.docker.com/desktop/install/mac-install/](https://www.jetbrains.com/ko-kr/idea/download/?section=mac),
+Docker window : https://docs.docker.com/desktop/install/windows-install/,
+Docker Mac : https://docs.docker.com/desktop/install/mac-install/
+
 해당 링크에 접속하여 InteliJ와 DockerDesktop을 설치해주세요. 사양은 본인의 환경에 맞게 설정합니다.
 
-window에서의 InteliJ
+**InteliJ**
 ![intelij_Window.png](images/intelij_Window.png)
 
-Mac
-![intelij_Mac.png](images/intelij_Mac.png)
-설치 프로그램 다운로드가 완료되면, 설치 파일을 실행 후 Next를 연타하여 다운로드를 완료합니다.
+다운로드 버튼을 클릭하여 설치 프로그램을 다운로드합니다.
+![image](https://github.com/user-attachments/assets/f4ac68d8-2f0f-4991-a692-6ccfd616248f)
+
+드래그하여 설치 프로그램을 내 Mac으로 옮깁니다.
+![image](https://github.com/user-attachments/assets/28a7602a-5bb0-4799-ac75-707c3849780e)
+
+그러면 이렇게 팝업 창이 뜰 것이다. Continue -> Don't send 순으로 클릭한다.
+![image](https://github.com/user-attachments/assets/08a0dfca-8a40-4b20-9ebf-f843be83fca5)
+![image](https://github.com/user-attachments/assets/c99d9659-a11a-4cf0-957d-7f2b5e1c8329)
+
+이 후, Next를 연달아 클릭하면 설치가 완료됩니다.
 
 ---
 
 Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아주세요.
+
+Docker window : https://docs.docker.com/desktop/install/windows-install/,
+Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 ![docker.png](images/docker.png)
 
 ### Window
-이 페이지에서는 둘 다 체크해주세요. 
+설치 리소스를 다운받다보면, 이런 페이지가 뜨게 됩니다. 이 페이지에서는 **모두 체크표시**해줍니다..
 ![image](https://github.com/user-attachments/assets/b851d50a-217a-49dd-9d1c-1737f6b0e008)
 설치가 완료되면 close를 눌러 설치를 완료합니다.
 
@@ -63,17 +77,21 @@ Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아�
 >https://github.com/hackersground-kr/hg-byebye-team.git 링크를 복사합니다.
 >![github.png](images/github.png)
 > 
->https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
+>clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
 >![git.png](images/git.png)
-> 
->Next x5 -> Git from the command line~ 클릭 -> Next x6 을 하여 깃 설치를 마무리합니다. window
-> 
->1. 아래 명령어를 터미널에 입력하여 Homebrew 설치를 시작합니다.
->   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
->2. password 문구가 나오면 mac 비밀번호를 입력하고 설치를 완료합니다.
->3. 이 명령어를 입력하여 Git 설치를 시작합니다. brew install git
->4. 설치가 완료되면 git --version을 입력하여 정상적으로 설치되었는지 확인합니다.
->5. 정상적으로 설치 되었다면 터미널을 종료합니다. mac
+
+### window
+Next를 연달아 5번 클릭 -> Git from the command line~ 클릭 -> Next를 6번 클릭을 하여 깃 설치를 마무리합니다.
+
+### MAC
+1. 아래 명령어를 터미널에 입력하여 Homebrew 설치를 시작합니다. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+![image](https://github.com/user-attachments/assets/2d855021-ccd2-4831-a064-28bc33521a6a)
+2. password 문구가 나오면 mac 비밀번호를 입력하고 설치를 완료합니다.
+3. 아래 명령어를 입력하여 Git 설치를 시작합니다.
+>brew install git
+5. 설치가 완료되면 아래 명령어를 입력하여 정상적으로 설치되었는지 확인합니다.
+>git --version
+6. 정상적으로 설치 되었다면 터미널을 종료합니다.
 
 터미널(또는 명령 프롬프트)을 열고, 프로젝트를 저장할 폴더로 이동합니다. 예를 들어, 바탕화면에 클론하고 싶다면 다음과 같이 입력합니다
 > cd ~/Desktop  <- Mac
@@ -122,7 +140,7 @@ window의 경우
 설치 후 
 >azd login
 >
-을 입력하여 microsoft 계정을 이용해 로그인을 진행합니다. 로그인이 성공하면 로그인 페이지를 닫고 터미널로 돌아옵니다. 실패 시 계속 시도합니다.
+을 입력하여 microsoft 계정을 이용해 로그인을 진행합니다. 로그인이 성공하면 로그인 페이지를 닫고 터미널로 돌아옵니다. 실패 하더라도 계속 시도하시면 됩니다.
 
 이후, 해당 명령어를 입력합니다.
 
@@ -131,11 +149,11 @@ cd
 cd Desktop/hg-common-hackergroud
 azd init -e common-hackergroud
 ```
-이후 SUCCESS라는 문구가 보이면 넘어갑니다.
+이후 **SUCCESS**라는 문구가 보이면 넘어갑니다.
 
->Use code in the current directory 를 마우스 위 아래 방향키로 선택한 후 엔터를 입력합니다.
+**Use code in the current directory** 를 키보드 위 아래 방향키로 선택한 후 엔터를 입력합니다.
 > 
->마찬가지로 Confirm and continue initializing my app을 같은 방법으로 선택해줍니다.
+>마찬가지로 **Confirm and continue initializing my app**을 같은 방법으로 선택해줍니다.
 > 
 SUCCESS: Your app is ready for the cloud! 문구를 확인하면 성공하셨습니다! 
 
@@ -157,7 +175,7 @@ language: java
 
 >Select an Azure Subscription to use 문구에서 Hackers Ground 리소스 그룹을 키보드 위 아래 방향키로 선택하세요. 선택후 엔터를 누르시면 됩니다.
 
->Select an Azure location to use 문구에서는 13. (Asia Pacific) Korea South (koreacentral) 를 같은 방법으로 선택한 뒤 엔터를 누릅니다.
+>그 후 Select an Azure location to use 문구에서는 13. (Asia Pacific) Korea South (koreacentral) 를 같은 방법으로 선택한 뒤 엔터를 누릅니다.
 
 ```Deploying services (azd deploy)
 (✓) Done: Deploying service server
@@ -180,31 +198,25 @@ git commit -m "First commit"
 ```
 
 https://github.com/ 해당 링크를 통해 깃허브에 접속한 뒤에 로그인 합니다.
-
+<img width="412" alt="Screenshot 2024-08-26 at 11 48 19 PM" src="https://github.com/user-attachments/assets/07c8b8c1-87b1-446c-81d2-bcf2c71bbd65">
 Profile 오른쪽의 프로필 사진을 클릭하여 프로필 메뉴에 접근합니다.
-
+![image](https://github.com/user-attachments/assets/c7aed06c-de47-4ae1-89af-06590ffd23f5)
 Your Repositories를 클릭하여 본인의 리포지토리 목록을 확인합니다.
-
+![image](https://github.com/user-attachments/assets/ad7e142c-517b-436a-8625-adeb65b3476d)
 오른쪽 상단의 초록색 new 버튼을 클릭하여 리포지토리를 생성합니다.
-
+![image](https://github.com/user-attachments/assets/113263eb-0181-4b44-bbc1-1426351ff9c6)
 이름을 chapter-two로 설정합니다.
-
+![image](https://github.com/user-attachments/assets/4916bfe0-9e72-414b-b0f5-4d13648fa3bc)
 이후 쭉 내려가서 Create Repository를 클릭하여 리포지토리를 생성합니다.
-
+![image](https://github.com/user-attachments/assets/31d2df39-d0c9-4ae0-b445-ec525ec76e34)
 생성 후 보이는 화면에서 https://github.com/{깃허브ID}/chapter-two.git 을 복사합니다.
-
-InteliJ로 돌아와 터미널에서 다음 명령어를 입력합니다.
-```
-git remote add origin https://github.com/{깃허브ID}/chapter-two.git
-```
-
-그리고
-```
-git push origin main
-```
-명령어를 입력하여 메인 브랜치에 코드를 push합니다.
+![Group 7](https://github.com/user-attachments/assets/fc5e56a7-460d-4fb6-91cf-d5789e68b91f)
+InteliJ로 돌아와 터미널에서 다음 명령어를 순서대로 입력합니다.
+![image](https://github.com/user-attachments/assets/8bf31b6a-01d1-4adf-a33e-bee78433d347)
 
 이후 터미널에 보이는 url을 클릭하여 다시 깃허브로 이동하여 commit & push가 제대로 진행 된 것을 확인합니다.
+<img width="896" alt="Screenshot 2024-08-27 at 12 01 31 AM" src="https://github.com/user-attachments/assets/4aa8ccba-e405-4ff2-837d-d6d1c0d713e9">
+이런식으로 떠있다면 성공이다.
 
 다시 InteliJ의 터미널에 접속하여 
 ```
@@ -323,6 +335,7 @@ DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
 다시 깃허브로 복귀하여 리포지토리 화면에 도착합니다.
 
 위쪽에 settings를 클릭하고, 왼쪽 아래의 Secrets & Variables를 클릭한 다음 바로 밑에 있는 actions를 클릭하세요.
+![Group 8](https://github.com/user-attachments/assets/120e31fe-8a47-4d62-9ffa-d8866c226a8e)
 
 오른쪽에 초록색 버튼의 New Repository Secret을 클릭한 뒤에, Name과 Secret 칸에 각각 해당 키워드를 입력해주세요.
 ```
@@ -342,6 +355,8 @@ git push
 ```
 를 입력하여 커밋을 진행합니다. GitHub 리포지토리의 Actions 탭에서 Azure Dev 워크플로우가 돌아가는 것을 확인합니다.
 
-GitHub Actions 워크플로우가 성공적으로 끝나면 로그 화면에서 아래와 같은 링크를 볼 수 있습니다. 이를 클릭해서 정상적으로 작동하는지 확인합니다.
-성공적으로 작동한다면 배포가 모두 완료되었습니다.
+GitHub Actions 워크플로우가 성공적으로 끝나면 로그 화면에서 "여기"와 같은 링크를 볼 수 있습니다. 이를 클릭해서 정상적으로 작동하는지 확인합니다.
+![Group 9](https://github.com/user-attachments/assets/1295d350-bc85-4d24-9f91-246e01c9a3b2)
+
+성공적으로 작동한다면 배포가 모두 완료되었습니다!😁
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
