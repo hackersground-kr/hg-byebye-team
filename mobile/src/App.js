@@ -12,6 +12,7 @@ import Header from './component/common/Header';
 import LoginPage from './page/LoginPage';
 import SignupPage from './page/SignupPage';
 import JobOfferDetailPage from './page/JobOfferDetailPage';
+import AddJobOfferForm from './page/AddJobOfferForm';
 
 function App() {
   const Background = styled.div`
@@ -32,6 +33,7 @@ function App() {
 
         <Route path="/show-all-job-offer" element={<ShowAllJobOffer />} />
         <Route path="/job-offer-detail/:id" element={<JobOfferDetailPage/>}/>
+        <Route path="/add-job-offer" element={<AddJobOfferForm/>}/>
 
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/signup" element={<SignupPage/>}/>

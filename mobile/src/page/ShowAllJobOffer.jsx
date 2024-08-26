@@ -77,27 +77,27 @@ const Divider = styled.div`
 const ShowAllJobOffer = () => {
     const navigate = useNavigate();
 
-    // const [jobOffers, setJobOffers] = useState([]);
-    const jobOffers = [
-        { id: 0, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
-        { id: 1, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
-        { id: 2, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
-        { id: 3, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
-        { id: 4, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
-        { id: 5, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
-        { id: 6, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
-        { id: 7, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' }
-    ];
+    const [jobOffers, setJobOffers] = useState([]);
+    // const jobOffers = [
+    //     { id: 0, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
+    //     { id: 1, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
+    //     { id: 2, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
+    //     { id: 3, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
+    //     { id: 4, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
+    //     { id: 5, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
+    //     { id: 6, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
+    //     { id: 7, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' }
+    // ];
 
-    // useEffect(() => {
-    //     axios.get("https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/gooin")
-    //         .then(res => {
-    //             setJobOffers(res.data.data)
-    //         })
-    //         .catch(err => {
-    //             console.log(err);
-    //         })
-    // }, [])
+    useEffect(() => {
+        axios.get("https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/gooin")
+            .then(res => {
+                setJobOffers(res.data.data)
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
 
     return (
         <Background>

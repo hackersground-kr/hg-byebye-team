@@ -73,23 +73,6 @@ const Card = styled.div`
     border-radius: 8px;
 `;
 
-const CardImage = styled.img`
-    width: 60px;
-    height: 60px;
-    margin-right: 15px;
-`;
-
-const CardContent = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
-const CardTitle = styled.h4`
-    font-size: 22px;
-    font-weight: 600; /* Pretendard Semibold */
-    color: #000000;
-    margin: 0;
-`;
 
 const CardDescription = styled.p`
     font-size: 16px;
@@ -109,7 +92,6 @@ const SettingsItem = styled.div`
     flex-direction: row;
     align-items: center;
     background: #FFFFFF;
-    margin: ${props => props.marginTop || '20px'} 15px 0 15px;
     padding: 13px 20px;
 `;
 
@@ -147,10 +129,12 @@ const ProfilePage = () => {
             }
         )
             .then(res => {
+                console.log("zzz")
                 setName(res.data.data.name)
                 setPhoneNum(res.data.data.phoneNum)
             })
             .catch(err => {
+                console.log(err);
                 navigate("/login");
             })
     })

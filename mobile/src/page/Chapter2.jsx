@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; // Link 임포트
 import styled from 'styled-components';
 import Background from '../component/common/Background';
+import axios from 'axios';
 
 const Image = styled.img`
     width: 100%;
@@ -56,6 +57,18 @@ const JobAuthor = styled.div`
 `;
 
 const Chapter2 = () => {
+    const [jobOfferList, setJobOfferList] = useState([]);
+
+    useEffect(() => {
+        axios.get("https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/gooin")
+            .then(res => {
+                setJobOfferList(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
+
     return (
         <Background>
             <Image src="https://www.kised.or.kr/upload/popupzone/a1/169942776583800.png" alt="Promotion" />
@@ -65,7 +78,18 @@ const Chapter2 = () => {
                     <ViewAll>전체보기</ViewAll>
                 </Link>
             </SectionHeader>
-            <JobItem>
+            {jobOfferList.map((jobOffer, index) => {
+                if (index >= 1) {
+                    return
+                }
+                return (
+                    <JobItem>
+                        <JobTitle>{jobOffer.title}</JobTitle>
+                        <JobAuthor>{jobOffer.userName}</JobAuthor>
+                    </JobItem>
+                )
+            })}
+            {/* <JobItem>
                 <JobTitle>[구인] 마늘 관련 창업할 사람 구함</JobTitle>
                 <JobAuthor>서승훈</JobAuthor>
             </JobItem>
@@ -73,7 +97,7 @@ const Chapter2 = () => {
             <JobItem>
                 <JobTitle>[구인] 마늘 관련 창업할 사람 구함</JobTitle>
                 <JobAuthor>서승훈</JobAuthor>
-            </JobItem>
+            </JobItem> */}
             <Divider />
         </Background>
     );

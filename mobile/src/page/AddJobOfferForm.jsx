@@ -1,19 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
-// Styled Components
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    padding: 0 20px;
-    box-sizing: border-box;
-    background-color: #ffffff; // Background color of the LinearLayout
-`;
+import Background from '../component/common/Background';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { getCookie } from '../utils/react-cookies';
 
 const FormContainer = styled.div`
-    flex: 9;
     margin-top: 90px;
 `;
 
@@ -27,8 +19,7 @@ const Title = styled.h1`
 const Input = styled.input`
     width: 100%;
     height: 55px;
-    padding-left: 10px;
-    margin-top: ${props => props.marginTop || '20px'};
+    margin-bottom: 20px;
     font-family: 'Pretendard-Medium';
     border: 1px solid #BCBCBC;
     border-radius: 4px;
@@ -42,7 +33,6 @@ const Input = styled.input`
 const Button = styled.button`
     width: 100%;
     height: 50px;
-    margin: 10px 15px;
     background-color: #007BFF; // Background color for the button
     color: #ffffff;
     border: none;
@@ -57,54 +47,53 @@ const Button = styled.button`
 `;
 
 const AddJobOfferForm = () => {
-    // State hooks for form data
-    const [title, setTitle] = useState('');
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [otherInfo, setOtherInfo] = useState('');
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission
-        console.log('Form submitted:', { title, name, phone, otherInfo });
-    };
+    const addGooin = () => {
+        var title = document.getElementById("title").value
+        var description = document.getElementById("description").value
+
+        const request = {
+            title: title,
+            description: description
+        }
+
+        axios.post(
+            "https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/gooin", 
+            request,
+            {
+                headers: {
+                    Authorization: `Bearer ${getCookie("accessToken")}`
+                }
+            }
+        )
+            .then(res => {
+                navigate("/");
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
 
     return (
-        <Container>
+        <Background>
             <FormContainer>
                 <Title>구인 글 추가하기</Title>
-                <form onSubmit={handleSubmit}>
+                <form>
                     <Input
                         type="text"
-                        placeholder="제목을 입력해주세요"
-                        value={title}
-                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="제목을 입력해주세요."
+                        id="phoneNum"
                     />
                     <Input
                         type="text"
-                        placeholder="이름을 입력해주세요"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        marginTop="30px"
+                        placeholder="설명을 입력해주세요."
+                        id="description"
                     />
-                    <Input
-                        type="text"
-                        placeholder="전화번호를 입력해주세요."
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
-                        marginTop="20px"
-                    />
-                    <Input
-                        type="text"
-                        placeholder="기타 정보를 입력해주세요"
-                        value={otherInfo}
-                        onChange={(e) => setOtherInfo(e.target.value)}
-                        marginTop="20px"
-                    />
-                    <Button type="submit">추가하기</Button>
+                    <Button onClick={addGooin}>추가하기</Button>
                 </form>
             </FormContainer>
-        </Container>
+        </Background>
     );
 };
 

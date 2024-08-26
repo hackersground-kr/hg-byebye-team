@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Background from '../component/common/Background';
 
 // 스타일 정의
 const Container = styled.div`
@@ -69,7 +70,7 @@ const Button = styled.button`
 
 const CompanyInfo = () => {
     return (
-        <Container>
+        <Background>
             <Header>기업</Header>
             <Image src="{이미지}" />
             <CompanyName>기업 이름</CompanyName>
@@ -79,7 +80,7 @@ const CompanyInfo = () => {
                 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글. 대충 기업을 소개하는 글.
             </Description>
             <Button>다음으로</Button>
-        </Container>
+        </Background>
     );
 }
 

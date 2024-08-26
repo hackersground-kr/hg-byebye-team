@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Background from '../component/common/Background';
 
 // Styles
 const Container = styled.div`
@@ -74,8 +75,7 @@ const CardSection = styled.div`
 // Component
 const EducationScreen = () => {
     return (
-        <Container>
-            <Title>Chapter2</Title>
+        <Background>
             <Image src="create.png" alt="Promotional" />
             <ContentContainer>
                 <CardSection>
@@ -99,7 +99,7 @@ const EducationScreen = () => {
                     </Card>
                 </CardSection>
             </ContentContainer>
-        </Container>
+        </Background>
     );
 };
 

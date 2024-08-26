@@ -1,18 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-
-// 스타일 정의
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    padding: 15px;
-    box-sizing: border-box;
-    background-color: #F6F6F6;
-    font-family: 'Pretendard', sans-serif;
-    color: #000;
-`;
+import Background from '../component/common/Background';
+import axios from 'axios';
 
 const Header = styled.div`
     font-size: 25px;
@@ -60,18 +49,36 @@ const ArrowIcon = styled.img`
 `;
 
 const CompanyDetail = () => {
+    const [companyList, setCompanyList] = useState([]);
+
+    useEffect(() => {
+        axios.get("https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/business")
+            .then(res => {
+                setCompanyList(res.data.data);
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }, [])
+
     return (
-        <Container>
+        <Background>
             <Header>Chapter2에서 태어난 기업</Header>
-            <Card>
-                <Logo src="naver.png" alt="Company Logo"/>
-                <TextContainer>
-                    <CompanyName>네이버</CompanyName>
-                    <CompanyDescription>말이 필요없는 개쩌는 기업 ㄷ</CompanyDescription>
-                </TextContainer>
-                <ArrowIcon src="arrow.png" alt="Arrow"/>
-            </Card>
-        </Container>
+                
+                {companyList.map((company, index) => {
+                    return (
+                        <Card>
+                        <Logo src="naver.png" alt="Company Logo"/>
+                        <TextContainer>
+                            <CompanyName>{company.name}</CompanyName>
+                            <CompanyDescription>{company.shortDescription}</CompanyDescription>
+                        </TextContainer>
+                        <ArrowIcon src="arrow.png" alt="Arrow"/>
+                        </Card>
+                    )
+                })}
+            
+        </Background>
     );
 }
 
