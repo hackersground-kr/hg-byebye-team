@@ -71,6 +71,7 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 ![image](https://github.com/user-attachments/assets/fa6776bf-fb73-44b0-909d-2b5d15cc7430)
 
 이후 설치 파일을 실행하여 똑같이 진행하면 설치가 완료됩니다.
+*1회 실행 해야 합니다*
 
 ## 시작하기
 
@@ -125,7 +126,7 @@ SDK -> Add SDK -> Download JDK로 들어갑니다.
 인텔리제이를 재실행해 주세요. JDK가 정상적으로 설치 된 것을 확인하실 수 있습니다.
 
 그리고 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 입력해주세요.
-chmod +x gradlew
+chmod +x gradlew, 
 ./gradlew build -x test
 ![image](https://github.com/user-attachments/assets/53749e3d-7795-4565-8c1d-d60c1f189003)
 
@@ -146,8 +147,8 @@ window의 경우
 
 ```
 cd
-cd Desktop/hg-common-hackergroud
-azd init -e common-hackergroud
+cd Desktop/hg-byebye-hackergroud
+azd init -e byebye-hackergroud
 ```
 이후 **SUCCESS**라는 문구가 보이면 넘어갑니다.
 
@@ -220,6 +221,7 @@ InteliJ로 돌아와 터미널에서 다음 명령어를 순서대로 입력합�
 
 다시 InteliJ의 터미널에 접속하여 
 ```
+REPOSITORY_ROOT=Desktop/hg-byebye-team
 cd $REPOSITORY_ROOT
 mkdir -p .github/workflows
 cd $REPOSITORY_ROOT
