@@ -56,7 +56,7 @@ const Button = styled.button`
     }
 `;
 
-const JobPostingForm = () => {
+const AddJobOfferForm = () => {
     // State hooks for form data
     const [title, setTitle] = useState('');
     const [name, setName] = useState('');
@@ -108,4 +108,4 @@ const JobPostingForm = () => {
     );
 };
 
-export default JobPostingForm;
+export default AddJobOfferForm;

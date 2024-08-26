@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // Link 임포트
 import styled from 'styled-components';
 
 // 스타일 정의
@@ -44,6 +45,7 @@ const ViewAll = styled.span`
     color: #B0B0B0;
     margin-left: auto;
     margin-right: 15px;
+    cursor: pointer; /* 클릭 가능한 스타일 추가 */
 `;
 
 const Divider = styled.div`
@@ -75,10 +77,12 @@ const Chapter2 = () => {
     return (
         <Container>
             <Header>Chapter2</Header>
-            <Image src="{홍보 사진 URL}" alt="Promotion" />
+            <Image src="https://www.kised.or.kr/upload/popupzone/a1/169942776583800.png" alt="Promotion" />
             <SectionHeader>
                 <SectionTitle>구인</SectionTitle>
-                <ViewAll>전체보기</ViewAll>
+                <Link to="/show-all-job-offer">
+                    <ViewAll>전체보기</ViewAll>
+                </Link>
             </SectionHeader>
             <JobItem>
                 <JobTitle>[구인] 마늘 관련 창업할 사람 구함</JobTitle>
@@ -92,7 +96,9 @@ const Chapter2 = () => {
             <Divider />
             <SectionHeader>
                 <SectionTitle>구직</SectionTitle>
-                <ViewAll>전체보기</ViewAll>
+                <Link to="/job-posting-form">
+                    <ViewAll>전체보기</ViewAll>
+                </Link>
             </SectionHeader>
             <JobItem>
                 <JobTitle>[구인] 마늘만 30년 깠습니다</JobTitle>
