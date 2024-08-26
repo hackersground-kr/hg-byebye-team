@@ -76,12 +76,11 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 
 >https://github.com/hackersground-kr/hg-byebye-team.git 링크를 복사합니다.
 >![github.png](images/github.png)
-> 
->clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
->![git.png](images/git.png)
-
+>
 ### window
-Next를 연달아 5번 클릭 -> Git from the command line~ 클릭 -> Next를 6번 클릭을 하여 깃 설치를 마무리합니다.
+clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
+![git.png](images/git.png)
+설치 프로그램을 다운 받아 실행 -> Next를 연달아 5번 클릭 -> Git from the command line~ 클릭 -> Next를 6번 클릭을 하여 깃 설치를 마무리합니다.
 
 ### MAC
 1. 아래 명령어를 터미널에 입력하여 Homebrew 설치를 시작합니다. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
