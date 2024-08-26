@@ -37,10 +37,27 @@ InteliJ, Docker Desktop, Github 계정, Microsoft 계정 (권한이 있어야합
 
 window에서의 InteliJ
 ![intelij_Window.png](images/intelij_Window.png)
+
 Mac
 ![intelij_Mac.png](images/intelij_Mac.png)
+다운로드가 완료되면 Next를 연타하여 다운로드를 완료합니다.
+
+---
+
 Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아주세요.
 ![docker.png](images/docker.png)
+
+### Window
+이 페이지에서는 둘 다 체크해주세요. 
+![image](https://github.com/user-attachments/assets/b851d50a-217a-49dd-9d1c-1737f6b0e008)
+설치가 완료되면 close를 눌러 설치를 완료합니다.
+
+### Mac
+운영체제 버전을 바꿔 다운로드해주고, 드래그하여 앱을 이동시켜줍니다.
+![image](https://github.com/user-attachments/assets/fa6776bf-fb73-44b0-909d-2b5d15cc7430)
+
+이후 설치 파일을 실행하여 똑같이 진행하면 설치가 완료됩니다.
+
 ## 시작하기
 
 >https://github.com/hackersground-kr/hg-byebye-team.git 링크를 복사합니다.
@@ -49,7 +66,7 @@ Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아�
 >https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
 >![git.png](images/git.png)
 > 
->Next x5 -> Git from the command line~ 클릭 -> Next x6 을 하여 깃허브 설치를 마무리합니다. window
+>Next x5 -> Git from the command line~ 클릭 -> Next x6 을 하여 깃 설치를 마무리합니다. window
 > 
 >1. 아래 명령어를 터미널에 입력하여 Homebrew 설치를 시작합니다.
 >   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -317,7 +334,7 @@ DB_PASSWORD        DB의 비밀번호
 DOCKER_USERNAME    도커 유저 ID
 DOCKER_PASSWORD    비밀번호
 ```
-맞게 입력하신 후, InteliJ로 돌아와 터미널에
+위와 같이 입력하신 후, InteliJ로 돌아와 터미널에
 ```
 git add .
 git commit -m "Add GitHub Actions workflow for Azure deployment"
