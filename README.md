@@ -36,11 +36,11 @@ InteliJ, Docker Desktop, Github 계정, Microsoft 계정 (권한이 있어야합
 해당 링크에 접속하여 InteliJ와 DockerDesktop을 설치해주세요. 사양은 본인의 환경에 맞게 설정합니다.
 
 window에서의 InteliJ
-![스크린샷 2024-08-26 오후 6.48.22.png](images/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202024-08-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.48.22.png)
+![intelij_Window.png](images/intelij_Window.png)
 Mac
 ![intelij_Mac.png](images/intelij_Mac.png)
 Docker 또한 맞는 환경에 따라 클릭하여 다운받아주세요.
-![스크린샷 2024-08-26 오후 6.49.31.png](images/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA%202024-08-26%20%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE%206.49.31.png)
+![docker.png](images/docker.png)
 ## 시작하기
 
 >https://github.com/hackersground-kr/hg-byebye-team.git 링크를 복사합니다.
