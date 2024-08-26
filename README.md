@@ -125,6 +125,7 @@ SDK -> Add SDK -> Download JDK로 들어갑니다.
 인텔리제이를 재실행해 주세요. JDK가 정상적으로 설치 된 것을 확인하실 수 있습니다.
 
 그리고 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 입력해주세요.
+chmod +x gradlew
 ./gradlew build -x test
 ![image](https://github.com/user-attachments/assets/53749e3d-7795-4565-8c1d-d60c1f189003)
 
