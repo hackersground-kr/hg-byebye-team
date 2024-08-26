@@ -1,65 +1,32 @@
-import { useState } from "react";
-import styled from "styled-components";
+import React from 'react'
+import { ChevronRight } from "lucide-react"
+import { Header } from 'src/component/NavigationBar'
 
-const Background = styled.div`
-    width: 90vw;
-    height: 90vh;
-    padding: 5vh 5vw;
-    background-color: #e4e3e3;
-`;
+const ListItem = ({ text }) => (
+  <div className="flex items-center justify-between p-4 bg-white rounded-lg shadow-sm mb-2">
+    <div className="flex items-center">
+      <div className="w-10 h-10 bg-[#19ce60] rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">
+        N
+      </div>
+      <div>
+        <p className="font-semibold">네이버</p>
+        <p className="text-sm text-gray-500">{text}</p>
+      </div>
+    </div>
+    <ChevronRight className="text-gray-400" />
+  </div>
+)
 
-const Card = styled.div`
-    width: 100%;
-    height: 15%;
-    background-color: white;
-    margin-top: 15px;
-    border-radius: 10px;
-    display: flex;
-    justify-content: flex-start;
-    line-height: 15%;
-`;
-
-const CompanyPage = () => {
-    const [itemList, setItemList] = useState([
-        {
-            "name": "네이버",
-            "description": "말이 필요없는 레전드 기업"
-        },
-        {
-            "name": "네이버",
-            "description": "말이 필요없는 레전드 기업"
-        },
-        {
-            "name": "네이버",
-            "description": "말이 필요없는 레전드 기업"
-        },
-        {
-            "name": "네이버",
-            "description": "말이 필요없는 레전드 기업"
-        }
-    ])
-
-    return (
-        <Background>
-            <h1>Chapter2에서 태어난 기업</h1>
-
-            <div style={{width: "100%", height: "100%"}}>
-                {itemList.map((item, index) => {
-                    return (
-                        <Card>
-                            <div style={{width: "10%", height: "80%"}}>
-                                <img src="/companylogo.png" style={{width: "100%", height: "100%"}}/>
-                            </div>
-                            <div style={{marginLeft: "3vw"}}>
-                                <p style={{fontFamily: "Preteandard-Regular", fontSize: "25px", fontWeight: "bolder"}}>{item.name}</p>
-                                <p>{item.description}</p>
-                            </div>
-                        </Card>
-                    )
-                })}
-            </div>
-        </Background>
-    )
+export default function Chapter2List() {
+  return (
+    <div className="max-w-4xl mx-auto p-4">
+        <Header></Header>
+      <h1 className="text-2xl font-bold mb-4">Chapter2에서 태어난 기업</h1>
+      <div className="space-y-2">
+        {[...Array(8)].map((_, i) => (
+          <ListItem key={i} text="일이 힘들어도 계속는 기업 ㄷ" />
+        ))}
+      </div>
+    </div>
+  )
 }
-
-export default CompanyPage;

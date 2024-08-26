@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import DefaultInput from "../component/DefaultInput";
-import DefualtButton from "../component/DefaultButton";
+import { Input } from "./input";
+import { Button } from "./button";
 
 const Background = styled.div`
     width: 50%;
@@ -11,16 +11,69 @@ const Background = styled.div`
 
 const JoinPage = () => {
     return (
-        <Background>
-            <h1>Join</h1>
-            <div style={{"marginBottom": "5vh"}}>
-                <DefaultInput placeholder="아이디를 입력해주세요"></DefaultInput>
-                <DefaultInput placeholder="비밀번호를 입력해주세요"></DefaultInput>
-                <DefaultInput placeholder="이름을 입력해주세요"></DefaultInput>
-                <DefaultInput placeholder="전화번호를 입력해주세요"></DefaultInput>
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <div className="w-full max-w-md space-y-8 p-10 bg-white rounded-xl shadow-md">
+          <h1 className="text-3xl font-bold text-center text-gray-900">Join</h1>
+          
+          <form className="mt-8 space-y-6">
+            <div className="rounded-md shadow-sm -space-y-px">
+              <div>
+                <label htmlFor="userId" className="sr-only">아이디</label>
+                <Input
+                  id="userId"
+                  name="userId"
+                  type="text"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="아이디를 입력해주세요"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="sr-only">비밀번호</label>
+                <Input
+                  id="password"
+                  name="password"
+                  type="password"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="비밀번호를 입력해주세요"
+                />
+              </div>
+              <div>
+                <label htmlFor="username" className="sr-only">이름</label>
+                <Input
+                  id="username"
+                  name="username"
+                  type="text"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="이름을 입력해주세요"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="sr-only">전화번호</label>
+                <Input
+                  id="phonenumber"
+                  name="phonenumber"
+                  type="password"
+                  required
+                  className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                  placeholder="전화번호를 입력해주세요"
+                />
+              </div>
             </div>
-            <DefualtButton text="회원가입"></DefualtButton>
-        </Background>
+  
+            <div>
+              <Button
+                type="submit"
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                회원가입
+              </Button>
+            </div>
+          </form>
+        </div>
+      </div>
     )
 }
 

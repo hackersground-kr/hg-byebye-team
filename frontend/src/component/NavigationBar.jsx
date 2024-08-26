@@ -1,39 +1,32 @@
-import styled from "styled-components";
-import { MdHomeFilled } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-export const NavigationBar = () => {
+const NavItem = (props) => (
+    <span className="text-gray-600 text-sm cursor-pointer hover:text-gray-800 transition-colors">
+      {props.text}
+    </span>
+  )
+
+export function Header() {
     const navigate = useNavigate();
-
     return (
-        <Header>
-            <Logo onClick={() => {navigate("/");}}>Chapter.2</Logo>
-            <div>
-                <ListItem href="/funding">펀딩</ListItem>
-                <ListItem href="/education">교육</ListItem>
-                <ListItem href="/company">회사</ListItem>
-            </div>
-            <div>
-                <ListItem href="/login">로그인</ListItem>
-                <ListItem href="/join">회원가입</ListItem>
-            </div>
-        </Header>
+        <header className="flex flex-col sm:flex-row justify-between items-center mb-12">
+        <h1 className="text-3xl font-bold mb-4 sm:mb-0" onClick={() => {navigate("/");}}>Chapter2</h1>
+        <nav className="flex space-x-6">
+            <a href="/education"><NavItem text="교육"/></a>
+            <a href="/company"><NavItem text="기업" /></a>
+            <a href="/meet"><NavItem text="회의" /></a>
+            <a href="/login"><NavItem text="로그인" /></a>
+            <a href="/join"><NavItem text="회원가입" /></a>
+        </nav>
+        </header>
     )
+    
 }
 
 export const Background = styled.div`
     width: 100vw;
     height: 100vh;
-`;
-
-export const Header = styled.header`
-    width: 90vw;
-    height: 10vh;
-    border-bottom: 1px solid #D0D0D0;
-    line-height: 10vh;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 5vw;
 `;
 
 export const Logo = styled.span`

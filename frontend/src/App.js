@@ -7,12 +7,13 @@ import MainPage from "./page/MainPage";
 import LoginPage from "./page/LoginPage";
 import JoinPage from "./page/JoinPage";
 import CompanyPage from "./page/CompanyPage";
+import EducationPage from "./page/EducationPage";
+import Meeting from "./page/Meeting";
 
 function App() {
   return (
     <BrowserRouter>
     <Background>
-      <NavigationBar/>
 
       <Routes>
         <Route path="/" element={<MainPage/>}/>
@@ -20,6 +21,8 @@ function App() {
         <Route path="/login" element={<LoginPage/>}/>
         <Route path="/join" element={<JoinPage/>}/>
         <Route path="/company" element={<CompanyPage/>}/>
+        <Route path="/education" element={<EducationPage/>}/>
+        <Route path="/meet" element={<Meeting/>}/>
       </Routes>
       
     </Background>
