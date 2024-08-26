@@ -44,8 +44,10 @@ Docker 또한 맞는 환경에 따라 클릭하여 다운받아주세요.
 ## 시작하기
 
 >https://github.com/hackersground-kr/hg-byebye-team.git 링크를 복사합니다.
+>![github.png](images/github.png)
 > 
 >https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
+>![git.png](images/git.png)
 > 
 >https://goddaehee.tistory.com/216 를 참고하여 깃 설치를 마무리합니다. window
 > 
