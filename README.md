@@ -60,13 +60,15 @@ Mac
 리포지토리를 클론합니다.
 > git clone https://github.com/hackersground-kr/hg-byebye-team.git
 > 
+```
 IntelliJ IDEA를 실행합니다.
 •	처음 시작 시, “Open” 또는 “Import Project”를 선택합니다.
 •	클론한 프로젝트 폴더를 선택하고 “OK”를 클릭합니다.
 •	IntelliJ가 프로젝트 설정을 자동으로 인식하고 설정을 완료합니다.
 경고창이 나타날 시, Trust Project를 선택합니다.
 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 입력해주세요.
->./gradlew build -x test
+./gradlew build -x test
+```
 
 Docker Desktop을 실행시킵니다.
 
@@ -82,13 +84,51 @@ window의 경우
 을 입력하여 microsoft 계정을 이용해 로그인을 진행합니다. 로그인이 성공하면 로그인 페이지를 닫고 터미널로 돌아옵니다. 실패 시 계속 시도합니다.
 
 이후, 해당 명령어를 입력합니다.
->cd
+
+```
+cd
 cd Desktop/hg-common-hackergroud
 azd init -e common-hackergroud
-> 
+```
 이후 SUCCESS라는 문구가 보이면 넘어갑니다.
 
 >Use code in the current directory 를 마우스 위 아래 방향키로 선택한 후 엔터를 입력합니다.
 > 
-sdasdas
+>마찬가지로 Confirm and continue initializing my app을 같은 방법으로 선택해줍니다.
+> 
+SUCCESS: Your app is ready for the cloud! 문구를 확인하면 성공하셨습니다! 
+
+인텔리제이 왼쪽의 디렉토리 중 루트 디렉토리 하위에 존재하는 azure.yaml 파일을 선택합니다.
+
+```
+name: HackerGround
+metadata:
+template: azd-init@1.9.5
+services:
+HackerGround:
+project: .
+host: containerapp
+language: java 
+```
+를 복사하여 붙여넣습니다.
+
+이후 터미널에 azd up 명령어를 입력합니다.
+
+>Select an Azure Subscription to use 문구에서 Hackers Ground 리소스 그룹을 키보드 위 아래 방향키로 선택하세요. 선택후 엔터를 누르시면 됩니다.
+
+>Select an Azure location to use 문구에서는 13. (Asia Pacific) Korea South (koreacentral) 를 같은 방법으로 선택한 뒤 엔터를 누릅니다.
+
+```Deploying services (azd deploy)
+(✓) Done: Deploying service server
+- Endpoint: 서버 url
+(✓) Done: Deploying service web
+- Endpoint: 웹 url
+
+SUCCESS: Your up workflow to provision and deploy to Azure completed in 2 minutes 22 seconds.
+```
+가 뜨게 되면 배포에 성공하게 됩니다.
+
+다음으로는 깃허브의 Git Actions를 이용한 CI/CD 구축을 진행하겠습니다.
+
+
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
