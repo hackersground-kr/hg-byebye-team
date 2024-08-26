@@ -80,6 +80,7 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 *1회 실행 해야 합니다*
 
 ## 시작하기
+> **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
 
 >https://github.com/hackersground-kr/hg-byebye-team.git 링크를 복사합니다.
 >![github.png](images/github.png)
@@ -139,7 +140,7 @@ SDK -> Add SDK -> Download JDK로 들어갑니다.
 <br>
 git checkout backend
 <br>
-chmod +x gradlew
+chmod +x gradlew <-- 윈도우에서는 해당하지 않습니다.
 <br>
 ./gradlew build -x test
 <br>
@@ -362,4 +363,3 @@ GitHub Actions 워크플로우가 성공적으로 끝나면 로그 화면에서 
 ![Group 9](https://github.com/user-attachments/assets/1295d350-bc85-4d24-9f91-246e01c9a3b2)
 
 성공적으로 작동한다면 배포가 모두 완료되었습니다!😁
-> **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
