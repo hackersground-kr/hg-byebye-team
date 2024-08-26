@@ -247,90 +247,90 @@ https://raw.githubusercontent.com/Azure-Samples/azd-starter-bicep/main/.github/w
 name: Deploy to Azure Container Apps
 
 on:
-workflow_dispatch:
-push:
-branches:
-- backend
+  workflow_dispatch:
+  push:
+    branches:
+      - main
 
 permissions:
-id-token: write
-contents: read
+  id-token: write
+  contents: read
 
 jobs:
-build:
-runs-on: ubuntu-latest
-env:
-AZURE_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
-AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
-AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
-AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
-AZURE_LOCATION: ${{ vars.AZURE_LOCATION }}
-AZURE_ENV_NAME: ${{ vars.AZURE_ENV_NAME }}
-DATABASE_URL: ${{ secrets.DB_URL }}
-DATABASE_USER: ${{ secrets.DB_USERNAME }}
-DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
+  build:
+    runs-on: ubuntu-latest
+    env:
+      AZURE_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+      AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+      AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+      AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+      AZURE_LOCATION: ${{ vars.AZURE_LOCATION }}
+      AZURE_ENV_NAME: ${{ vars.AZURE_ENV_NAME }}
+      DATABASE_URL: ${{ secrets.DB_URL }}
+      DATABASE_USER: ${{ secrets.DB_USERNAME }}
+      DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
 
-steps:
-- name: Checkout
-  uses: actions/checkout@v3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
 
-- name: Set up JDK 17
-  uses: actions/setup-java@v3
-  with:
-    java-version: '17'
-    distribution: 'temurin'
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
 
-- name: yaml file setting
-  run: |
-    echo "${{ secrets.APPLICATION_YAML }}" > ./src/main/resources/application.yaml
+      - name: yaml file setting
+        run: |
+          echo "${{ secrets.APPLICATION_YAML }}" > ./src/main/resources/application.yaml
 
-- name: Grant execute permission for gradlew
-  run: chmod +x gradlew
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
-- name: Build with Gradle
-  run: ./gradlew build
+      - name: Build with Gradle
+        run: ./gradlew build
 
-- name: Docker build
-  run: |
-    echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-    docker build -t ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on .
-    docker push ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on:latest
+      - name: Docker build
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on .
+          docker push ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on:latest
 
-- name: Install azd
-  uses: Azure/setup-azd@v1.0.0
+      - name: Install azd
+        uses: Azure/setup-azd@v1.0.0
 
-- name: Log in with Azure (Federated Credentials)
-  if: ${{ env.AZURE_CLIENT_ID != '' }}
-  run: |
-    azd auth login `
-      --client-id "$Env:AZURE_CLIENT_ID" `
-      --federated-credential-provider "github" `
-      --tenant-id "$Env:AZURE_TENANT_ID"
-  shell: pwsh
+      - name: Log in with Azure (Federated Credentials)
+        if: ${{ env.AZURE_CLIENT_ID != '' }}
+        run: |
+          azd auth login `
+            --client-id "$Env:AZURE_CLIENT_ID" `
+            --federated-credential-provider "github" `
+            --tenant-id "$Env:AZURE_TENANT_ID"
+        shell: pwsh
 
-- name: Log in with Azure (Client Credentials)
-  if: ${{ env.AZURE_CREDENTIALS != '' }}
-  run: |
-    $info = $Env:AZURE_CREDENTIALS | ConvertFrom-Json -AsHashtable
-    Write-Host "::add-mask::$($info.clientSecret)"
-    
-    azd auth login \
-      --client-id "$($info.clientId)" \
-      --client-secret "$($info.clientSecret)" \
-      --tenant-id "$($info.tenantId)"
-  shell: pwsh
-  env:
-    AZURE_CREDENTIALS: ${{ env.AZURE_CREDENTIALS }}
+      - name: Log in with Azure (Client Credentials)
+        if: ${{ env.AZURE_CREDENTIALS != '' }}
+        run: |
+          $info = $Env:AZURE_CREDENTIALS | ConvertFrom-Json -AsHashtable
+          Write-Host "::add-mask::$($info.clientSecret)"
+          
+          azd auth login \
+            --client-id "$($info.clientId)" \
+            --client-secret "$($info.clientSecret)" \
+            --tenant-id "$($info.tenantId)"
+        shell: pwsh
+        env:
+          AZURE_CREDENTIALS: ${{ env.AZURE_CREDENTIALS }}
 
-- name: Provision Infrastructure
-  run: |
-    azd provision --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
-  env:
-    AZD_INITIAL_ENVIRONMENT_CONFIG: ${{ secrets.AZD_INITIAL_ENVIRONMENT_CONFIG }}
+      - name: Provision Infrastructure
+        run: |
+          azd provision --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
+        env:
+          AZD_INITIAL_ENVIRONMENT_CONFIG: ${{ secrets.AZD_INITIAL_ENVIRONMENT_CONFIG }}
 
-- name: Deploy Application
-  run: |
-    azd deploy --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
+      - name: Deploy Application
+        run: |
+          azd deploy --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
 ```
 
 를 복사하여 붙여넣습니다.
