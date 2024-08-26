@@ -1,6 +1,6 @@
-# `{{ 팀 이름 }}` - `{{ 제품/서비스 이름 }}`
+# `정신나갈것같네` - `Chapter.2`
 
-해커그라운드 해커톤에 참여하는 `{{ 팀 이름 }}` 팀의 `{{ 제품/서비스 이름 }}`입니다.
+해커그라운드 해커톤에 참여하는 `정신나갈것같네` 팀의 `Chapter.2`입니다.
 
 ## 참고 문서
 
@@ -28,7 +28,45 @@
 ### 사전 준비 사항
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위해 사전에 필요한 준비 사항들을 적어주세요.**
+>
+InteliJ, Docker Desktop, Github 계정, Microsoft 계정 (권한이 있어야합니다.), 자바 jdk-17가 필요합니다.
+https://www.jetbrains.com/ko-kr/idea/download/
+https://docs.docker.com/desktop/install/mac-install/
+해당 링크에 접속하여 InteliJ와 DockerDesktop을 설치해주세요. 사양은 본인의 환경에 맞게 설정합니다.
 
+window에서의 InteliJ
+https://aday7.tistory.com/entry/IntelliJ-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EA%B8%B0%EB%B3%B8-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95-%EA%B0%80%EC%9D%B4%EB%93%9C
+Mac
+https://how-can-i.tistory.com/127
+
+블로그에 따라 로그인, 회원가입까지 진행해주시면 되겠습니다.
 ## 시작하기
+
+https://github.com/hackersground-kr/hg-byebye-team.git 링크를 복사합니다.
+
+https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
+https://goddaehee.tistory.com/216 를 참고하여 깃 설치를 마무리합니다. window
+https://velog.io/@wijoonwu/Mac-OS-%EC%97%90%EC%84%9C-Git-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0 mac
+터미널(또는 명령 프롬프트)을 열고, 프로젝트를 저장할 폴더로 이동합니다. 예를 들어, 바탕화면에 클론하고 싶다면 다음과 같이 입력합니다
+
+
+cd ~/Desktop  <- Mac
+
+cd %USERPROFILE%\Desktop  <- Windows
+
+리포지토리를 클론합니다.
+
+git clone https://github.com/hackersground-kr/hg-byebye-team.git
+
+IntelliJ IDEA를 실행합니다.
+•	처음 시작 시, “Open” 또는 “Import Project”를 선택합니다.
+•	클론한 프로젝트 폴더를 선택하고 “OK”를 클릭합니다.
+•	IntelliJ가 프로젝트 설정을 자동으로 인식하고 설정을 완료합니다.
+경고창이 나타날 시, Trust Project를 선택합니다.
+
+왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 입력해주세요.
+./gradlew build -x test
+
+
 
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
