@@ -47,7 +47,7 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 다운로드 버튼을 클릭하여 설치 프로그램을 다운로드합니다.
 ![image](https://github.com/user-attachments/assets/f4ac68d8-2f0f-4991-a692-6ccfd616248f)
 
-드래그하여 설치 프로그램을 내 Mac으로 옮깁니다.
+맥의 경우, 드래그하여 설치 프로그램을 내 Mac으로 옮깁니다.
 ![image](https://github.com/user-attachments/assets/28a7602a-5bb0-4799-ac75-707c3849780e)
 
 그러면 이렇게 팝업 창이 뜰 것이다. Continue -> Don't send 순으로 클릭한다.
