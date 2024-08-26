@@ -21,6 +21,8 @@ code {
   justify-content: center;
   
   margin: auto;
+
+  overflow: hidden;
 }
 
 @media (max-width: 500px) {

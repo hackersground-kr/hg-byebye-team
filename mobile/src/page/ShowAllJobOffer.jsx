@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Background from '../component/common/Background';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 // Styles
 const Container = styled.div`
@@ -72,39 +75,47 @@ const Divider = styled.div`
 `;
 
 const ShowAllJobOffer = () => {
+    const navigate = useNavigate();
+
+    // const [jobOffers, setJobOffers] = useState([]);
     const jobOffers = [
-        { description: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
-        { description: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
-        { description: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
-        { description: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
-        { description: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
-        { description: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
-        { description: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
-        { description: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' }
+        { id: 0, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
+        { id: 1, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
+        { id: 2, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
+        { id: 3, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
+        { id: 4, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
+        { id: 5, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' },
+        { id: 6, title: '[구인] 마늘만 30년 깠습니다', author: '서승훈' },
+        { id: 7, title: '[구인] 마늘 관련 창업할 사람 구함', author: '서승훈' }
     ];
 
+    // useEffect(() => {
+    //     axios.get("https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/gooin")
+    //         .then(res => {
+    //             setJobOffers(res.data.data)
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         })
+    // }, [])
+
     return (
-        <Container>
+        <Background>
             <Header>
                 <HeaderText>구인</HeaderText>
             </Header>
-            <SearchInput
-                id="searchInput"
-                type="text"
-                placeholder="검색"
-            />
             {jobOffers.map((offer, index) => (
                 <React.Fragment key={index}>
                     <JobListing mt={index === 0 ? '25px' : '15px'}>
-                        <JobDescription>
-                            <JobText>{offer.description}</JobText>
+                        <JobDescription onClick={() => {navigate("/job-offer-detail/" + offer.id)}}>
+                            <JobText>{offer.title}</JobText>
                         </JobDescription>
                         <JobAuthor>{offer.author}</JobAuthor>
                     </JobListing>
                     <Divider />
                 </React.Fragment>
             ))}
-        </Container>
+        </Background>
     );
 };
 

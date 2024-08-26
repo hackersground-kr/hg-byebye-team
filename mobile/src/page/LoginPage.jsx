@@ -1,21 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
-
-// 스타일 정의
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #FFFFFF;
-    font-family: 'Pretendard', sans-serif;
-`;
+import Background from '../component/common/Background';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import { setCookie } from '../utils/react-cookies';
 
 const LoginInfoBox = styled.div`
-    flex: 9;
-    margin-top: 90px;
+    margin: 90px auto;
+    text-align: center;
 `;
 
 const Heading = styled.h1`
@@ -27,13 +19,12 @@ const Heading = styled.h1`
 const Input = styled.input`
     width: 100%;
     height: 55px;
-    margin-top: ${(props) => props.mt || '0'};
-    padding: 0 10px;
     font-family: 'Pretendard Medium', sans-serif;
     font-size: 16px;
     border: 1px solid #BCBCBC;
     border-radius: 4px;
     box-sizing: border-box;
+    margin-bottom: 10px;
 
     &::placeholder {
         color: #BCBCBC;
@@ -43,7 +34,6 @@ const Input = styled.input`
 const LoginButton = styled.button`
     width: 100%;
     height: 50px;
-    margin: 10px 15px 0;
     background-color: #000000; /* bac_button color */
     color: #FFFFFF;
     font-size: 16px;
@@ -74,28 +64,53 @@ const SignupLink = styled.span`
 `;
 
 const LoginPage = () => {
+    const navigate = useNavigate();
+
+    const login = () => {
+        var userId = document.getElementById("userId").value;
+        var password = document.getElementById("password").value;
+
+        const request = {
+            id: userId,
+            password: password
+        }
+
+        axios.post("https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/member/login", request)
+            .then(res => {
+                setCookie('accessToken', res.data.data.accessToken.substring(7), {
+                    path: "/",
+                    secure: "/"
+                })
+
+                navigate("/");
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     return (
-        <Container>
+        <Background>
             <LoginInfoBox>
                 <Heading>회원 정보를 입력해주세요.</Heading>
                 <Input
-                    id="loginEmailEdit"
-                    type="email"
+                    id="userId"
+                    type="text"
                     placeholder="아이디를 입력해주세요"
                 />
                 <Input
-                    id="loginPasswordEdit"
+                    id="password"
                     type="password"
-                    placeholder="비밀번호"
+                    placeholder="비밀번호를 입력해주세요"
                     mt="20px"
                 />
+                <LoginButton id="loginButton" onClick={login}>로그인</LoginButton>
             </LoginInfoBox>
-            <LoginButton id="loginButton">로그인</LoginButton>
             <SignupContainer>
                 <SignupText>계정이 없으신가요?</SignupText>
-                <SignupLink id="loginToJoin">회원가입</SignupLink>
+                <SignupLink id="loginToJoin" onClick={() => {navigate("/signup")}}>회원가입</SignupLink>
             </SignupContainer>
-        </Container>
+        </Background>
     );
 };
 

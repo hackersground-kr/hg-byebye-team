@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Background from '../component/common/Background';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 // 스타일 정의
 const Container = styled.div`
@@ -14,7 +17,6 @@ const Container = styled.div`
 `;
 
 const FormContainer = styled.div`
-    flex: 9;
     margin-top: 90px;
 `;
 
@@ -27,8 +29,7 @@ const Heading = styled.h1`
 const Input = styled.input`
     width: 100%;
     height: 55px;
-    margin-top: ${(props) => props.mt || '0'};
-    padding: 0 10px;
+    margin-bottom: 20px;
     font-family: 'Pretendard Medium', sans-serif;
     font-size: 16px;
     border: 1px solid #BCBCBC;
@@ -43,7 +44,6 @@ const Input = styled.input`
 const SignupButton = styled.button`
     width: 100%;
     height: 50px;
-    margin: 10px 15px 0;
     background-color: #000000; /* bac_button color */
     color: #FFFFFF;
     font-size: 16px;
@@ -54,34 +54,61 @@ const SignupButton = styled.button`
 `;
 
 const SignupPage = () => {
+    const navigate = useNavigate();
+
+    const join = () => {
+        var userId = document.getElementById('userId').value
+        var password = document.getElementById('password').value
+        var username = document.getElementById('username').value
+        var phoneNumber = document.getElementById('phoneNumber').value
+        const request = {
+            id: userId,
+            password: password,
+            name: username,
+            phoneNum: phoneNumber
+        }
+
+        console.log(request)
+
+        axios.post("https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/member/register", request)
+            .then(res => {
+                navigate("/");
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    }
+
     return (
-        <Container>
+        <Background>
             <FormContainer>
                 <Heading>회원가입해주세요.</Heading>
                 <Input
-                    id="signupEmailEdit"
+                    id="userId"
                     type="email"
                     placeholder="아이디를 입력해주세요"
                 />
                 <Input
-                    id="signupPasswordEdit"
+                    id="password"
                     type="password"
                     placeholder="비밀번호를 입력해주세요."
                     mt="20px"
                 />
                 <Input
+                    id="username"
                     type="text"
                     placeholder="이름을 입력해주세요."
                     mt="20px"
                 />
                 <Input
+                    id="phoneNumber"
                     type="text"
                     placeholder="전화번호를 입력해주세요."
                     mt="20px"
                 />
             </FormContainer>
-            <SignupButton id="signupButton">회원가입</SignupButton>
-        </Container>
+            <SignupButton id="signupButton" onClick={join}>회원가입</SignupButton>
+        </Background>
     );
 };
 

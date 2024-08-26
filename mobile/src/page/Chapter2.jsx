@@ -1,25 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom'; // Link 임포트
 import styled from 'styled-components';
-
-// 스타일 정의
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    background-color: #FFFFFF;
-    font-family: 'Pretendard', sans-serif;
-    box-sizing: border-box;
-    padding: 15px;
-`;
-
-const Header = styled.h1`
-    font-size: 25px;
-    font-weight: 600; /* Pretendard Semibold */
-    color: #000000;
-    margin: 15px 0;
-`;
+import Background from '../component/common/Background';
 
 const Image = styled.img`
     width: 100%;
@@ -75,8 +57,7 @@ const JobAuthor = styled.div`
 
 const Chapter2 = () => {
     return (
-        <Container>
-            <Header>Chapter2</Header>
+        <Background>
             <Image src="https://www.kised.or.kr/upload/popupzone/a1/169942776583800.png" alt="Promotion" />
             <SectionHeader>
                 <SectionTitle>구인</SectionTitle>
@@ -94,22 +75,7 @@ const Chapter2 = () => {
                 <JobAuthor>서승훈</JobAuthor>
             </JobItem>
             <Divider />
-            <SectionHeader>
-                <SectionTitle>구직</SectionTitle>
-                <Link to="/job-posting-form">
-                    <ViewAll>전체보기</ViewAll>
-                </Link>
-            </SectionHeader>
-            <JobItem>
-                <JobTitle>[구인] 마늘만 30년 깠습니다</JobTitle>
-                <JobAuthor>서승훈</JobAuthor>
-            </JobItem>
-            <Divider />
-            <JobItem>
-                <JobTitle>[구인] 마늘만 30년 깠습니다</JobTitle>
-                <JobAuthor>서승훈</JobAuthor>
-            </JobItem>
-        </Container>
+        </Background>
     );
 };
 

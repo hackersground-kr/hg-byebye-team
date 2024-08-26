@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Background from '../component/common/Background';
+import axios from 'axios';
+import { getCookie } from '../utils/react-cookies';
+import { useNavigate } from 'react-router-dom';
 
 // Styles
 const Container = styled.div`
@@ -127,26 +131,40 @@ const Separator = styled.div`
 
 // Component
 const ProfilePage = () => {
+    const navigate = useNavigate();
+
+    const [name, setName] = useState('서승훈');
+    const [phoneNum, setPhoneNum] = useState('010-1234-1234');
+
+    useEffect(() => {
+        console.log(`${getCookie('accessToken')}`)
+        axios.get(
+            "https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/member/myInfo",
+            {
+                "headers": {
+                    "Authorization": `Bearer ${getCookie('accessToken')}`
+                }
+            }
+        )
+            .then(res => {
+                setName(res.data.data.name)
+                setPhoneNum(res.data.data.phoneNum)
+            })
+            .catch(err => {
+                navigate("/login");
+            })
+    })
+
     return (
-        <Container>
+        <Background>
             <Title>프로필</Title>
             <ProfileContainer>
                 <ProfileImage src="profile.png" alt="Profile" />
                 <ProfileInfo>
-                    <UserName>{'서승훈'}</UserName>
-                    <UserPhone>010-2239-7951</UserPhone>
+                    <UserName>{name}</UserName>
+                    <UserPhone>{phoneNum}</UserPhone>
                 </ProfileInfo>
             </ProfileContainer>
-            <SectionTitle>나의 창업</SectionTitle>
-            <Card>
-                <CardImage src="naver.png" alt="Naver" />
-                <CardContent>
-                    <CardTitle>네이버</CardTitle>
-                    <CardDescription>말이 필요없는 개쩌는 기업 ㄷ</CardDescription>
-                </CardContent>
-                <Separator />
-                <ArrowIcon src="arrow.png" alt="Arrow" />
-            </Card>
             <SettingsSection>
                 <SettingsItem>
                     <SettingsText>개인정보처리방침</SettingsText>
@@ -164,7 +182,7 @@ const ProfilePage = () => {
                     <ArrowIcon src="arrow.png" alt="Arrow" />
                 </SettingsItem>
             </SettingsSection>
-        </Container>
+        </Background>
     );
 };
 
