@@ -40,7 +40,7 @@ window에서의 InteliJ
 
 Mac
 ![intelij_Mac.png](images/intelij_Mac.png)
-다운로드가 완료되면 Next를 연타하여 다운로드를 완료합니다.
+설치 프로그램 다운로드가 완료되면, 설치 파일을 실행 후 Next를 연타하여 다운로드를 완료합니다.
 
 ---
 
