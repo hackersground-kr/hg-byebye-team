@@ -130,5 +130,177 @@ SUCCESS: Your up workflow to provision and deploy to Azure completed in 2 minute
 
 다음으로는 깃허브의 Git Actions를 이용한 CI/CD 구축을 진행하겠습니다.
 
+터미널에서 다음 명령어를 입력합니다.
 
+```
+git init
+git add .
+git commit -m "First commit"
+```
+
+https://github.com/ 해당 링크를 통해 깃허브에 접속한 뒤에 로그인 합니다.
+
+Profile 오른쪽의 프로필 사진을 클릭하여 프로필 메뉴에 접근합니다.
+
+Your Repositories를 클릭하여 본인의 리포지토리 목록을 확인합니다.
+
+오른쪽 상단의 초록색 new 버튼을 클릭하여 리포지토리를 생성합니다.
+
+이름을 chapter-two로 설정합니다.
+
+이후 쭉 내려가서 Create Repository를 클릭하여 리포지토리를 생성합니다.
+
+생성 후 보이는 화면에서 https://github.com/{깃허브ID}/chapter-two.git 을 복사합니다.
+
+InteliJ로 돌아와 터미널에서 다음 명령어를 입력합니다.
+```
+git remote add origin https://github.com/{깃허브ID}/chapter-two.git
+```
+
+그리고
+```
+git push origin main
+```
+명령어를 입력하여 메인 브랜치에 코드를 push합니다.
+
+이후 터미널에 보이는 url을 클릭하여 다시 깃허브로 이동하여 commit & push가 제대로 진행 된 것을 확인합니다.
+
+다시 InteliJ의 터미널에 접속하여 
+```
+cd $REPOSITORY_ROOT
+mkdir -p .github/workflows
+cd $REPOSITORY_ROOT
+```
+를 입력합니다.
+
+> azd pipeline config
+> 
+를 입력하여 파이프라인 구축을 진행합니다.
+
+설정 마지막에 Would you like to commit and push your local changes to start the configured CI pipeline? 라는 질문이 나오면 n를 선택하고 종료합니다.
+
+```
+curl \
+https://raw.githubusercontent.com/Azure-Samples/azd-starter-bicep/main/.github/workflows/azure-dev.yml \
+--output $REPOSITORY_ROOT/.github/workflows/azure-dev.yml
+```
+를 입력하여 워크플로우 파일을 생성합니다.
+
+/github 디렉토리 안에 위치한 workflows 디렉토리에 들어가서 azure-dev.yml 파일을 들어갑니다.
+```
+name: Deploy to Azure Container Apps
+
+on:
+workflow_dispatch:
+push:
+branches:
+- backend
+
+permissions:
+id-token: write
+contents: read
+
+jobs:
+build:
+runs-on: ubuntu-latest
+env:
+AZURE_CLIENT_ID: ${{ vars.AZURE_CLIENT_ID }}
+AZURE_TENANT_ID: ${{ vars.AZURE_TENANT_ID }}
+AZURE_SUBSCRIPTION_ID: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+AZURE_RESOURCE_GROUP: ${{ vars.AZURE_RESOURCE_GROUP }}
+AZURE_LOCATION: ${{ vars.AZURE_LOCATION }}
+AZURE_ENV_NAME: ${{ vars.AZURE_ENV_NAME }}
+DATABASE_URL: ${{ secrets.DB_URL }}
+DATABASE_USER: ${{ secrets.DB_USERNAME }}
+DATABASE_PASSWORD: ${{ secrets.DB_PASSWORD }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: yaml file setting
+        run: |
+          echo "${{ secrets.APPLICATION_YAML }}" > ./src/main/resources/application.yaml
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Docker build
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on .
+          docker push ${{ secrets.DOCKER_USERNAME }}/uiseong-come-on:latest
+
+      - name: Install azd
+        uses: Azure/setup-azd@v1.0.0
+
+      - name: Log in with Azure (Federated Credentials)
+        if: ${{ env.AZURE_CLIENT_ID != '' }}
+        run: |
+          azd auth login `
+            --client-id "$Env:AZURE_CLIENT_ID" `
+            --federated-credential-provider "github" `
+            --tenant-id "$Env:AZURE_TENANT_ID"
+        shell: pwsh
+
+      - name: Log in with Azure (Client Credentials)
+        if: ${{ env.AZURE_CREDENTIALS != '' }}
+        run: |
+          $info = $Env:AZURE_CREDENTIALS | ConvertFrom-Json -AsHashtable
+          Write-Host "::add-mask::$($info.clientSecret)"
+          
+          azd auth login \
+            --client-id "$($info.clientId)" \
+            --client-secret "$($info.clientSecret)" \
+            --tenant-id "$($info.tenantId)"
+        shell: pwsh
+        env:
+          AZURE_CREDENTIALS: ${{ env.AZURE_CREDENTIALS }}
+
+      - name: Provision Infrastructure
+        run: |
+          azd provision --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
+        env:
+          AZD_INITIAL_ENVIRONMENT_CONFIG: ${{ secrets.AZD_INITIAL_ENVIRONMENT_CONFIG }}
+
+      - name: Deploy Application
+        run: |
+          azd deploy --environment ${{ env.AZURE_ENV_NAME }} --no-prompt
+```
+
+를 복사하여 붙여넣습니다.
+
+다시 깃허브로 복귀하여 리포지토리 화면에 도착합니다.
+
+위쪽에 settings를 클릭하고, 왼쪽 아래의 Secrets & Variables를 클릭한 다음 바로 밑에 있는 actions를 클릭하세요.
+
+오른쪽에 초록색 버튼의 New Repository Secret을 클릭한 뒤에, Name과 Secret 칸에 각각 해당 키워드를 입력해주세요.
+```
+NAME                Secret
+DB_PASSWORD        설정한 DB 비밀번호
+DB_URL             DB URL
+DB_USERNAME        DB의 유저 이름 ex) root
+DB_PASSWORD        DB의 비밀번호
+DOCKER_USERNAME    도커 유저 ID
+DOCKER_PASSWORD    비밀번호
+```
+맞게 입력하신 후, InteliJ로 돌아와 터미널에
+```
+git add .
+git commit -m "Add GitHub Actions workflow for Azure deployment"
+git push
+```
+를 입력하여 커밋을 진행합니다. GitHub 리포지토리의 Actions 탭에서 Azure Dev 워크플로우가 돌아가는 것을 확인합니다.
+
+GitHub Actions 워크플로우가 성공적으로 끝나면 로그 화면에서 아래와 같은 링크를 볼 수 있습니다. 이를 클릭해서 정상적으로 작동하는지 확인합니다.
+성공적으로 작동한다면 배포가 모두 완료되었습니다.
 > **여러분의 제품/서비스를 Microsoft 애저 클라우드에 배포하기 위한 절차를 구체적으로 나열해 주세요.**
