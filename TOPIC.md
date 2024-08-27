@@ -1,4 +1,4 @@
-<img width="554" alt="image" src="https://github.com/user-attachments/assets/ef55be3a-3978-4c94-877d-78596958070b"># `정신나갈거같네`팀 해커톤 주제
+# `정신나갈거같네`팀 해커톤 주제
 
 ## 팀명
 
