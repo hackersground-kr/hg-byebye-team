@@ -290,11 +290,13 @@ spring:
 ![image](https://github.com/user-attachments/assets/e47f0711-4daf-4dd9-84c6-ecfc75d5e109)
 <br>
 위와 같이 입력하신 후, InteliJ로 돌아와 터미널에
+
 ```
 git add .
 git commit -m "Add GitHub Actions workflow for Azure deployment"
 git push origin backend
 ```
+
 를 입력하여 커밋을 진행합니다. GitHub 리포지토리의 Actions 탭에서 Azure Dev 워크플로우가 돌아가는 것을 확인합니다.
 
 만약 Everything up-to-date 라는 명령어가 나타났다면,
