@@ -246,7 +246,30 @@ APPLICATION_YAML    {YAML파일 전체}
 DOCKER_PASSWORD     {도커 password}
 DOCKER_USERNAME     {도커 이름}
 ```
+아래는 APPLICATION_YAML의 예시입니다.
 <br>
+spring:
+  application:
+    jwt:
+      secretKey: 25432A462D4A614E645267556A586E3272357538782F413F4428472B4B625065
+      expiration: 43200000
+      refreshExpiration: 604800000   # 7일
+    name: chapter2
+  datasource:
+    url: jdbc:mysql://{DATABASE_URL}/chapter2
+    username: {DATABASE_USER}
+    password: {DATABASE_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+
+    show-sql: true
+<br>
+도커 비밀번호와 이름은 회원가입을 할 때 작성했던 비밀번호와 이름을 작성해주시면 됩니다.
 모두 수행하면 이렇게 됩니다.
 ![image](https://github.com/user-attachments/assets/e47f0711-4daf-4dd9-84c6-ecfc75d5e109)
 <br>
