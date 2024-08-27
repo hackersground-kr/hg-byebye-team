@@ -70,8 +70,6 @@ Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아�
 <br>
 계정이 없다면 회원가입을 해야 하는데, 회원가입을 하는 방법은
 <br>
-https://www.docker.com/products/docker-hub/
-<br>
 도커허브 공식사이트에 들어가서 (https://www.docker.com/products/docker-hub/)
 ![image](https://github.com/user-attachments/assets/92dc13d8-4c58-499f-bccf-59d0c8f5fd35)
 
