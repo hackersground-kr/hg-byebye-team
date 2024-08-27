@@ -44,7 +44,23 @@ Chapter2
 
 ## 제품 소개 슬라이드
 
-**(필수)** 제품 또는 서비스를 소개하는 슬라이드 덱을 리포지토리에 추가해 주세요. 슬라이드 덱은 [decks](./decks) 디렉토리에 저장한 후 이곳에 링크를 걸어주세요.
+![1.pdf](decks/1.pdf)
+![2.pdf](decks/2.pdf)
+![3.pdf](decks/3.pdf)
+![4.pdf](decks/4.pdf)
+![5.pdf](decks/5.pdf)
+![6.pdf](decks/6.pdf)
+![7.pdf](decks/7.pdf)
+![8.pdf](decks/8.pdf)
+![9.pdf](decks/9.pdf)
+![10.pdf](decks/10.pdf)
+![11.pdf](decks/11.pdf)
+![12.pdf](decks/12.pdf)
+![13.pdf](decks/13.pdf)
+![14.pdf](decks/14.pdf)
+![15.pdf](decks/15.pdf)
+![16.pdf](decks/16.pdf)
+![17.pdf](decks/17.pdf)
 
 ## 제품 소개 동영상
 
