@@ -264,6 +264,7 @@ DOCKER_USERNAME     {도커 이름}
 ```
 아래는 APPLICATION_YAML의 예시입니다.
 <br>
+```
 spring:
   application:
     jwt:
@@ -284,6 +285,7 @@ spring:
       ddl-auto: update
 
     show-sql: true
+```
 <br>
 도커 비밀번호와 이름은 회원가입을 할 때 작성했던 비밀번호와 이름을 작성해주시면 됩니다.
 모두 수행하면 이렇게 됩니다.
