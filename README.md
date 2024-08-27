@@ -131,7 +131,13 @@ Next -> Next..... -> Close 하여 설치합니다.
 >
 ### window
 clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치합니다.
-![Group 10](https://github.com/user-attachments/assets/701d8cef-f740-4ec4-a700-e35d888828d7)
+
+링크로 들어가서 다운로드로 이동합니다.
+![Group 11](https://github.com/user-attachments/assets/00be2c71-28ae-4f9c-ad26-110eeb681975)
+
+본인 운영체제에 맞는 것을 다운로드합니다.
+![image](https://github.com/user-attachments/assets/e54b9b23-958d-44a4-8232-8dfb825ac6a0)
+
 설치 프로그램을 다운 받아 실행 -> Next를 연달아 6번 클릭 -> Git from the command line~ 클릭 -> Next를 8번 클릭 -> install 합니다.
 
 ### MAC
