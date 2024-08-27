@@ -23,12 +23,20 @@ const SectionTitle = styled.h2`
     margin: 0 15px 0 0;
 `;
 
-const ViewAll = styled.span`
+const ViewAll = styled(Link)`
     font-size: 15px;
     color: #B0B0B0;
     margin-left: auto;
-    margin-right: 15px;
+    margin-right: 10px;
     cursor: pointer; /* 클릭 가능한 스타일 추가 */
+    text-decoration: none;
+`;
+
+const AddButton = styled(Link)`
+    font-size: 24px;
+    color: #B0B0B0;
+    cursor: pointer;
+    text-decoration: none;
 `;
 
 const Divider = styled.div`
@@ -74,30 +82,20 @@ const Chapter2 = () => {
             <Image src="https://www.kised.or.kr/upload/popupzone/a1/169942776583800.png" alt="Promotion" />
             <SectionHeader>
                 <SectionTitle>구인</SectionTitle>
-                <Link to="/show-all-job-offer">
-                    <ViewAll>전체보기</ViewAll>
-                </Link>
+                <ViewAll to="/show-all-job-offer">전체보기</ViewAll>
+                <AddButton to="/add-job-offer">+</AddButton>
             </SectionHeader>
             {jobOfferList.map((jobOffer, index) => {
                 if (index >= 1) {
-                    return
+                    return null;
                 }
                 return (
-                    <JobItem>
+                    <JobItem key={index}>
                         <JobTitle>{jobOffer.title}</JobTitle>
                         <JobAuthor>{jobOffer.userName}</JobAuthor>
                     </JobItem>
-                )
+                );
             })}
-            {/* <JobItem>
-                <JobTitle>[구인] 마늘 관련 창업할 사람 구함</JobTitle>
-                <JobAuthor>서승훈</JobAuthor>
-            </JobItem>
-            <Divider />
-            <JobItem>
-                <JobTitle>[구인] 마늘 관련 창업할 사람 구함</JobTitle>
-                <JobAuthor>서승훈</JobAuthor>
-            </JobItem> */}
             <Divider />
         </Background>
     );
