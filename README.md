@@ -239,23 +239,7 @@ azd init -e byebye-team
 > 
 >마찬가지로 **Confirm and continue initializing my app**을 같은 방법으로 선택해줍니다.
 > 
-SUCCESS: Your app is ready for the cloud! 문구를 확인하면 성공하셨습니다!
-
-이후 인텔리제이 터미널에 azd up 명령어를 입력합니다.
-
->Select an Azure Subscription to use 문구에서 Hackers Ground 리소스 그룹을 키보드 위 아래 방향키로 선택하세요. 선택후 엔터를 누르시면 됩니다.
-
->그 후 Select an Azure location to use 문구에서는 13. (Asia Pacific) Korea South (koreacentral) 를 같은 방법으로 선택한 뒤 엔터를 누릅니다.
-
-```Deploying services (azd deploy)
-(✓) Done: Deploying service server
-- Endpoint: 서버 url
-(✓) Done: Deploying service web
-- Endpoint: 웹 url
-
-SUCCESS: Your up workflow to provision and deploy to Azure completed in 2 minutes 22 seconds.
-```
-가 뜨게 되면 배포에 성공하게 됩니다.
+SUCCESS: Your app is ready for the cloud! 문구를 확인하면 성공하셨습니다.
 
 다음으로는 깃허브의 Git Actions를 이용한 CI/CD 구축을 진행하겠습니다.
 
@@ -309,7 +293,7 @@ spring:
 ```
 git add .
 git commit -m "Add GitHub Actions workflow for Azure deployment"
-git push origin main
+git push origin backend
 ```
 를 입력하여 커밋을 진행합니다. GitHub 리포지토리의 Actions 탭에서 Azure Dev 워크플로우가 돌아가는 것을 확인합니다.
 
