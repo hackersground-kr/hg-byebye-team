@@ -50,14 +50,13 @@ const AddJobOfferForm = () => {
     const navigate = useNavigate();
 
     const addGooin = () => {
-        var title = document.getElementById("title").value
-        var description = document.getElementById("description").value
+        const title = document.getElementById("title").value
+        const description = document.getElementById("description").value
 
         const request = {
             title: title,
             description: description
         }
-
         axios.post(
             "https://ca-hackerground-hgfyajoqog7sk.jollyforest-cf4e8105.koreacentral.azurecontainerapps.io/gooin", 
             request,
@@ -83,7 +82,7 @@ const AddJobOfferForm = () => {
                     <Input
                         type="text"
                         placeholder="제목을 입력해주세요."
-                        id="phoneNum"
+                        id="title"
                     />
                     <Input
                         type="text"
