@@ -287,7 +287,9 @@ spring:
 <br>
 도커 비밀번호와 이름은 회원가입을 할 때 작성했던 비밀번호와 이름을 작성해주시면 됩니다.
 모두 수행하면 이렇게 됩니다.
+
 ![image](https://github.com/user-attachments/assets/e47f0711-4daf-4dd9-84c6-ecfc75d5e109)
+
 <br>
 위와 같이 입력하신 후, InteliJ로 돌아와 터미널에
 
