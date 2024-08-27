@@ -207,7 +207,7 @@ Your Repositories를 클릭하여 본인의 리포지토리 목록을 확인합�
 이후 쭉 내려가서 Create Repository를 클릭하여 리포지토리를 생성합니다.
 ![image](https://github.com/user-attachments/assets/31d2df39-d0c9-4ae0-b445-ec525ec76e34)
 InteliJ로 돌아와 터미널에서 다음 명령어를 순서대로 입력합니다.
-![image](https://github.com/user-attachments/assets/62fbb00b-7ef0-466f-8635-fca58c51fb23)
+![image](https://github.com/user-attachments/assets/f5c1afbf-7778-4c45-99e5-7eaad4e4fece)
 
 이후 방금 전 생성했던 리포지토리로 이동하여 commit & push가 제대로 진행 된 것을 확인합니다.
 <img width="500" alt="Screenshot 2024-08-27 at 12 01 31 AM" src="https://github.com/user-attachments/assets/4aa8ccba-e405-4ff2-837d-d6d1c0d713e9">
