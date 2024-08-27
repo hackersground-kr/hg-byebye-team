@@ -41,7 +41,7 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 <br>
 해당 링크에 접속하여 InteliJ와 DockerDesktop을 설치해주세요.
 
-**InteliJ**
+**InteliJ(윈도우도 거의 동일)**
 ![intelij_Window.png](images/intelij_Window.png)
 
 다운로드 버튼을 클릭하여 설치 프로그램을 다운로드합니다.
@@ -50,14 +50,19 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 맥의 경우, 드래그하여 설치 프로그램을 내 Mac으로 옮깁니다.
 ![image](https://github.com/user-attachments/assets/28a7602a-5bb0-4799-ac75-707c3849780e)
 
+윈도우는 그냥 설치된 파일을 실행하면 된다.
+
 그러면 이렇게 팝업 창이 뜰 것이다. Continue -> Don't send 순으로 클릭한다.
 ![image](https://github.com/user-attachments/assets/08a0dfca-8a40-4b20-9ebf-f843be83fca5)
 ![image](https://github.com/user-attachments/assets/c99d9659-a11a-4cf0-957d-7f2b5e1c8329)
 
-윈도우의 경우는 64bit launcher와 Update PATH~ 를 선택합니다.
+반드시 64bit launcher와 Update PATH~ 를 선택합니다.
 ![image](https://github.com/user-attachments/assets/df5fd94c-efa6-4caa-a3e1-7189407e15c8)
 
-그 후 계속 next룰 누르면 설치가 완료됩니다.
+그 후 계속 next를 눌러줍니다.
+<br>
+![image](https://github.com/user-attachments/assets/7c13aade-8628-4024-8269-c60cbb20b20a)
+마지막으로 설치가 완료되었다고 뜨면 finish를 눌러 종료합니다.
 
 ---
 
@@ -67,8 +72,15 @@ Docker 또한 자신의 운영체제 환경에 따라 클릭하여 다운받아�
 <br>
 https://www.docker.com/products/docker-hub/
 <br>
-도커허브 공식사이트에 들어가서, Create Hub Account를 클릭하고, 본인이 쓸 계정의 정보들을 입력해주면 됩니다.
-![image](https://github.com/user-attachments/assets/dd74c055-40da-44aa-996f-db275f5b6693)
+도커허브 공식사이트에 들어가서 (https://www.docker.com/products/docker-hub/)
+![image](https://github.com/user-attachments/assets/92dc13d8-4c58-499f-bccf-59d0c8f5fd35)
+
+Create Hub Account를 클릭하고
+![image](https://github.com/user-attachments/assets/d0ae628a-65ad-46de-a7e9-bb354bbe7602)
+
+본인이 쓸 계정의 정보들을 입력해주면 됩니다.
+![image](https://github.com/user-attachments/assets/7e15b4c6-eb90-405c-896f-37e0333d615b)
+
 
 Docker window : https://docs.docker.com/desktop/install/windows-install/
 <br>
@@ -94,9 +106,21 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 
 윈도우는 exe파일을 다운로드 받고,
 <img width="1137" alt="Screenshot 2024-08-27 at 7 23 09 AM" src="https://github.com/user-attachments/assets/03952844-b0ea-4e00-8167-3664b9fc2d79">
+
+![image](https://github.com/user-attachments/assets/22d6cd0a-88c0-4870-ba1c-322bd034b779)
+![image](https://github.com/user-attachments/assets/235bf275-5871-4357-bb1f-aea35aceb154)
+![image](https://github.com/user-attachments/assets/41924afc-cf84-4f1b-9e5a-b0357ab465f6)
+![image](https://github.com/user-attachments/assets/08d0feec-122c-4ff3-abdc-f6676089dccf)
+Next -> Next..... -> Close 하여 설치합니다.
+
 <br>
-맥은 dmg파일을 다운로드 받으면 됩니다.
+맥은 dmg파일을 다운로드하고,
 <img width="1161" alt="Screenshot 2024-08-27 at 7 23 04 AM" src="https://github.com/user-attachments/assets/533d44b5-66b1-4ac3-802b-dfaf0bb57ffe">
+
+그 패키지 파일을 열어 계속을 클릭하면 금방 끝나게 된다.
+![image](https://github.com/user-attachments/assets/680d9093-9877-4008-9a83-482d0092b9c1)
+
+![image](https://github.com/user-attachments/assets/fe8c8b89-c996-4bb2-bfdb-4ebff5c2adfd)
 <br>
 
 ## 시작하기
