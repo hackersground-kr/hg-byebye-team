@@ -22,7 +22,7 @@ class GooinService(
         gooinRepository.save(
             gooinMapper.toEntity(Gooin(
                     dto,
-                    jwtUtils.getMember().name!!
+                    jwtUtils.getMember().name
                 )
             )
         )
