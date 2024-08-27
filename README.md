@@ -111,14 +111,45 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 ![image](https://github.com/user-attachments/assets/08d0feec-122c-4ff3-abdc-f6676089dccf)
 Next -> Next..... -> Close 하여 설치합니다.
 
+윈도우는 맥과는 다르게 환경변수를 직접 등록해주어야 합니다.
+
+1. 제어판을 열고, 환경 변수를 검색하여 시스템 환경 변수 편집에 들어갑니다.
+![image](https://github.com/user-attachments/assets/600025bb-cde7-479c-b417-38390e5f127a)
+
+2. 시스템 속성 화면에서 환경 변수 속성을 눌러줍니다.
+![image](https://github.com/user-attachments/assets/4a0d48ef-03da-4fe8-a7cc-f074f293084c)
+
+3. 환경 변수창에서 하단에 시스템 변수 탭에서 새로 만들기 버튼을 선택합니다.
+![image](https://github.com/user-attachments/assets/7ee4b103-9edf-4eb2-9adf-4ba2dd2b7898)
+
+4. 다음과 같이 설정해줍니다.
+![image](https://github.com/user-attachments/assets/67d1b569-1378-44c2-8b25-43350db425a9)
+
+5. 위와 같은 방법으로 새로만들기 버튼을 클릭하여 CLASSPATH 를 추가해줍니다.
+![image](https://github.com/user-attachments/assets/7df48823-4d63-4f41-b3a1-98886c25c99e)
+
+6. 시스템 변수(S) 에서 Path를 더블클릭하여 환경 변수 편집 창으로 들어갑니다.
+![image](https://github.com/user-attachments/assets/e862b42d-30b5-4fce-8db7-da9a240a25e8)
+
+7. 환경 변수 편집 탭에서 아래와 같이 설정해줍니다.
+좌측 상단의 새로 만들기 버튼을 클릭한 후 %JAVA_HOME%\bin 을 입력해줍니다.
+우측 중단의 위로 이동 버튼으로 가장 위로 옮겨줍니다.
+우측 하단의 확인 버튼으로 저장해줍니다.
+
+![image](https://github.com/user-attachments/assets/5426be3f-b7de-47d5-bac6-3367858cca27)
+
+환경변수가 설정되었습니다.
+
 <br>
-맥은 dmg파일을 다운로드하고,
-<img width="1161" alt="Screenshot 2024-08-27 at 7 23 04 AM" src="https://github.com/user-attachments/assets/533d44b5-66b1-4ac3-802b-dfaf0bb57ffe">
+맥은 다음 명령어를 터미널에 하나씩 입력하면 된다.
 
-그 패키지 파일을 열어 계속을 클릭하면 금방 끝나게 된다.
-![image](https://github.com/user-attachments/assets/680d9093-9877-4008-9a83-482d0092b9c1)
+```
+brew install openjdk@17
+sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
+echo 'export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
 
-![image](https://github.com/user-attachments/assets/fe8c8b89-c996-4bb2-bfdb-4ebff5c2adfd)
 <br>
 
 ## 시작하기
@@ -143,8 +174,6 @@ clone 받기 전, https://git-scm.com/ 에서 Git을 다운로드하고 설치�
 ![image](https://github.com/user-attachments/assets/2d855021-ccd2-4831-a064-28bc33521a6a)
 2. password 문구가 나오면 mac 비밀번호를 입력하고 설치를 완료합니다.
 3. 아래 명령어를 입력하여 Git 설치를 시작합니다.
-
-
 
 >brew install git
 4. 설치가 완료되면 아래 명령어를 터미널에 입력하여 정상적으로 설치되었는지 확인합니다.
