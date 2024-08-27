@@ -43,24 +43,7 @@ Chapter2
 **(필수)** 제품 또는 서비스의 전체 구성도 또는 아키텍처를 이미지로 작성해 주세요. 이미지는 [images](./images) 디렉토리에 저장한 후 이곳에 링크를 걸어주세요.
 
 ## 제품 소개 슬라이드
-
-![1.pdf](decks/1.pdf)
-![2.pdf](decks/2.pdf)
-![3.pdf](decks/3.pdf)
-![4.pdf](decks/4.pdf)
-![5.pdf](decks/5.pdf)
-![6.pdf](decks/6.pdf)
-![7.pdf](decks/7.pdf)
-![8.pdf](decks/8.pdf)
-![9.pdf](decks/9.pdf)
-![10.pdf](decks/10.pdf)
-![11.pdf](decks/11.pdf)
-![12.pdf](decks/12.pdf)
-![13.pdf](decks/13.pdf)
-![14.pdf](decks/14.pdf)
-![15.pdf](decks/15.pdf)
-![16.pdf](decks/16.pdf)
-![17.pdf](decks/17.pdf)
+https://github.com/hackersground-kr/hg-byebye-team/blob/main/decks/chapter2.pdf
 
 ## 제품 소개 동영상
 
