@@ -190,6 +190,8 @@ SDK -> Add SDK -> Download JDK로 들어갑니다.
 그리고 왼쪽 하단의 >_ 모양의 아이콘인 터미널을 클릭하여 실행 시킨 뒤, 콘솔에 다음 명령어를 차례대로 입력해주세요.
 <br>
 git checkout backend
+chmod +x gradlew
+./gradlew build
 ![image](https://github.com/user-attachments/assets/53749e3d-7795-4565-8c1d-d60c1f189003)
 
 Docker Desktop을 실행시킵니다.
