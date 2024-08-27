@@ -56,7 +56,7 @@ Docker Mac : https://docs.docker.com/desktop/install/mac-install/
 ![image](https://github.com/user-attachments/assets/08a0dfca-8a40-4b20-9ebf-f843be83fca5)
 ![image](https://github.com/user-attachments/assets/c99d9659-a11a-4cf0-957d-7f2b5e1c8329)
 
-반드시 64bit launcher와 Update PATH~ 를 선택합니다.
+반드시 Update PATH~ 를 선택합니다.
 ![image](https://github.com/user-attachments/assets/df5fd94c-efa6-4caa-a3e1-7189407e15c8)
 
 그 후 계속 next를 눌러줍니다.
